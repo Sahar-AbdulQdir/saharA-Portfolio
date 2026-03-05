@@ -1,0 +1,118 @@
+.hero {
+  /* background-color: #F5F3FF; */
+  min-height: 90vh;
+  display: flex;
+  border-radius: 25px;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  font-family: serif;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.content {
+  text-align: left;
+  margin-top: 40px;
+}
+
+.titleTop {
+  font-size: 120px;
+  color: #7C3AED;
+  margin: 0;
+  margin-left: 3rem;
+  line-height: 0.9;
+}
+
+.middleRow {
+     font-size: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.titleBottom {
+  font-size: 120px;
+  color: #7C3AED;
+  margin: 0;
+  margin-top: -14rem;
+}
+
+.imageWrapper {
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+}
+
+.image {
+  width: 260px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 40px;
+}
+
+/* TOP RIGHT ROLE */
+.roleWrapper {
+  position: absolute;
+  top: 3rem;
+  right: 11rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  /* gap: 8px; */
+}
+
+.roleVisual {
+  background-color: #4C1D95;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 15px;
+  font-size: 30px;
+  text-transform: lowercase;
+  align-self: flex-start;
+  transform: translateX(-30px);
+}
+
+.roleDesigner {
+  background-color: #4C1D95;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 15px;
+  font-size: 30px;
+  margin-top: -1rem;
+  text-transform: lowercase;
+  transform: translateX(30px);
+}
+
+/* BOTTOM LEFT PORTFOLIO */
+.portfolioWrapper {
+  position: absolute;
+  bottom: 0;
+  left: 70px;     /* moves both together */
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 20px;       /* controls spacing cleanly */
+  cursor: pointer;
+}
+
+.portfolioText {
+  color: #6B21A8;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-decoration: underline;
+  text-transform: uppercase;
+  /* transform: translateX(80px); */
+}
+
+.arrow {
+  font-size: 32px;
+  color: #6B21A8;
+  transform: rotate(35deg);
+  /* margin-top: 3rem; */
+}
