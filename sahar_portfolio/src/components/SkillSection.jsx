@@ -94,7 +94,7 @@ export default function SkillsSection() {
       <div
         style={{
           minHeight: "100vh",
-          background: "#0a0a16",
+          background: "#ffffff",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -113,7 +113,7 @@ export default function SkillsSection() {
             width: "600px",
             height: "600px",
             borderRadius: "50%",
-            background: "radial-gradient(circle, #3a1f6e22 0%, transparent 70%)",
+            background: "radial-gradient(circle, #827a9222 0%, transparent 70%)",
             pointerEvents: "none",
           }}
         />
@@ -125,7 +125,7 @@ export default function SkillsSection() {
             width: "300px",
             height: "300px",
             borderRadius: "50%",
-            background: "radial-gradient(circle, #00E5FF0a 0%, transparent 70%)",
+            background: "radial-gradient(circle, #f7fefe0a 0%, transparent 70%)",
             pointerEvents: "none",
           }}
         />
@@ -146,7 +146,7 @@ export default function SkillsSection() {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: "8px",
-                background: "#00E5FF12",
+                background: "#e5eaeb12",
                 border: "1px solid #00E5FF25",
                 borderRadius: "100px",
                 padding: "6px 16px",
@@ -180,7 +180,7 @@ export default function SkillsSection() {
                 fontFamily: "'Syne', sans-serif",
                 fontSize: "clamp(2.4rem, 5vw, 3.5rem)",
                 fontWeight: 800,
-                color: "#f0f0ff",
+                color: "#000000",
                 letterSpacing: "-0.03em",
                 lineHeight: 1.1,
                 margin: 0,

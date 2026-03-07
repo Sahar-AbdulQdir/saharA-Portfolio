@@ -3,10 +3,13 @@ import "./App.css";
 
 import Hero from "./components/Hero";
 import AboutMe from "./components/About";
-import SkillsSection from "./components/SkillSection";
+// import SkillsSection from "./components/SkillSection";
 import Projects from "./components/Projects";
-import Footer from "./components/Footer";
-import RishikeshBanner from "./components/heading";
+import AnimatedFooter from "./components/Footer";
+// import RishikeshBanner from "./components/heading";
+import Skills from "./components/skills2";
+import StackCards from "./components/Services";
+import DesignPhilosophy from "./components/desighPh";
 function App() {
   return (
     <div className="app">
@@ -14,9 +17,11 @@ function App() {
         <Hero />
         <AboutMe />
         {/* <RishikeshBanner />  */}
-        <SkillsSection />  {/* Only this, no manual SkillCard mapping */}
+        <Skills />  {/* Only this, no manual SkillCard mapping */}
+        <StackCards />
         <Projects />
-        <Footer />
+        <DesignPhilosophy />
+        <AnimatedFooter />
       </div>
     </div>
   );

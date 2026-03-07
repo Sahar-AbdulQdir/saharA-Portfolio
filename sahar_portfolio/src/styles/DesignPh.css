@@ -1,0 +1,47 @@
+.design-philosophy {
+  width: 100%;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 60px 20px;
+  background: radial-gradient(circle,rgba(239, 188, 245, 1) 0%, rgba(239, 94, 255, 1) 8%, rgba(239, 94, 255, 1) 50%, rgba(254, 232, 255, 1) 82%, rgba(255, 255, 255, 1) 100%);
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.moving-icon {
+  font-size: 80px;
+  animation: float 4s ease-in-out infinite;
+  color: #f7faff;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+.philosophy-text {
+  max-width: 900px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #f8fbff;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.philosophy-text.show {
+  opacity: 1;
+  transform: translateY(0);
+}

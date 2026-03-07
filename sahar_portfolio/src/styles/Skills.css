@@ -2,7 +2,7 @@
 
 .skills-section {
   min-height: 100vh;
-  background: #0a0a16;
+  background: #cdcddb;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,8 +27,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #00E5FF12;
-  border: 1px solid #00E5FF25;
+  background: #bfe9ee12;
+  border: 1px solid #c8e8eb25;
   border-radius: 100px;
   padding: 6px 16px;
   margin-bottom: 20px;
@@ -38,7 +38,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #00E5FF;
+  background: #ff0066;
   box-shadow: 0 0 8px #00E5FF;
 }
 
@@ -46,7 +46,7 @@
   font-family: 'Syne', sans-serif;
   font-size: clamp(2.4rem, 5vw, 3.5rem);
   font-weight: 800;
-  color: #f0f0ff;
+  color: #0d0d0e;
   letter-spacing: -0.03em;
   line-height: 1.1;
   margin: 0;
@@ -55,7 +55,7 @@
 .skill-description {
   font-family: 'DM Sans', sans-serif;
   font-size: 1rem;
-  color: #55557a;
+  color: #111119;
   margin-top: 16px;
   max-width: 480px;
   margin: 16px auto 0;
@@ -109,7 +109,7 @@
 
 .skill-progress-bar {
   height: 3px;
-  background: #ffffff0f;
+  background: #6969690f;
   border-radius: 2px;
   overflow: hidden;
 }

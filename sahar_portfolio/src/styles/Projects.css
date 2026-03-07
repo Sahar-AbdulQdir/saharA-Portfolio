@@ -10,8 +10,9 @@
 
 .projects-section {
   min-height: 100vh;
-  background: #0c0c0d;
+  background: #ffffff;
   padding: 72px 36px 80px;
+  margin-top: 10rem;
 }
 
 .projects-container {
@@ -48,7 +49,7 @@
   font-family: 'Syne', sans-serif;
   font-size: clamp(40px, 6vw, 72px);
   font-weight: 800;
-  color: #fff;
+  color: #000000;
   letter-spacing: -0.04em;
   line-height: 0.95;
 }
@@ -197,7 +198,7 @@
   font-family: 'Syne', sans-serif;
   font-size: 20px;
   font-weight: 700;
-  color: #ffffff;
+  color: #000000;
   margin: 0;
   line-height: 1.1;
   letter-spacing: -0.025em;

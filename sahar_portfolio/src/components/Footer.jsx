@@ -1,536 +1,532 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const styles = `
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@300;400&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --bg:     #08080d;
-    --card:   #0e0e16;
-    --border: rgba(255,255,255,0.06);
-    --accent: #920eac;
-    --gold:   #763198;
-    --glow:   rgba(201,169,110,0.18);
-    --text:   #f4f0ea;
-    --muted:  #5a5a72;
-    --muted2: #3a3a52;
+    --cream: #f0ede6;
+    --yellow: #d9e84a;
+    --green: #b8d4a0;
+    --dark-green: #2d5a3d;
+    --maroon: #7a1f2e;
+    --pink: #d63f6e;
+    --cyan: #6ed8d8;
+    --black: #1a1a1a;
   }
 
-  .pf-footer {
+  html { scroll-behavior: smooth; }
+
+  body {
+    // background: var(--cream);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  .footer-root {
     position: relative;
+    // background: var(--cream);
+    padding: 4rem 3rem 3rem;
     overflow: hidden;
-    background: var(--bg);
-    font-family: 'Syne', sans-serif;
-  }
-
-  .pf-rule {
-    height: 1px;
-    background: linear-gradient(90deg,
-      transparent 0%, var(--muted2) 30%,
-      var(--gold) 50%, var(--muted2) 70%, transparent 100%);
-    opacity: 0;
-    transform: scaleX(0.4);
-    animation: pf-ruleIn 1s cubic-bezier(0.16,1,0.3,1) forwards 0.2s;
-  }
-
-  .pf-blob {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    pointer-events: none;
-  }
-  .pf-blob-1 {
-    width: 500px; height: 300px;
-    background: radial-gradient(ellipse, rgba(201,169,110,0.07) 0%, transparent 70%);
-    top: -80px; left: -100px;
-  }
-  .pf-blob-2 {
-    width: 400px; height: 400px;
-    background: radial-gradient(ellipse, rgba(100,100,200,0.04) 0%, transparent 70%);
-    bottom: -100px; right: 0;
-  }
-
-  .pf-grain {
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .pf-wrap {
-    position: relative;
-    z-index: 1;
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 90px 48px 52px;
-  }
-
-  .pf-main {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 80px;
-    align-items: end;
-    margin-bottom: 72px;
-  }
-
-  .pf-eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 22px;
-    opacity: 0;
-    animation: pf-up 0.8s cubic-bezier(0.16,1,0.3,1) forwards 0.4s;
-  }
-  .pf-eyebrow-line {
-    width: 28px; height: 1px;
-    background: var(--gold);
-  }
-  .pf-eyebrow-text {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.35em;
-    color: var(--gold);
-    text-transform: uppercase;
-  }
-
-  .pf-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(52px, 7.5vw, 100px);
-    font-weight: 600;
-    line-height: 0.92;
-    color: var(--text);
-    letter-spacing: -0.02em;
-    opacity: 0;
-    animation: pf-up 0.9s cubic-bezier(0.16,1,0.3,1) forwards 0.55s;
-  }
-  .pf-name-italic {
-    font-style: italic;
-    font-weight: 300;
-    color: var(--gold);
-  }
-
-  .pf-tagline {
-    margin-top: 22px;
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--muted);
-    letter-spacing: 0.03em;
-    line-height: 1.8;
-    opacity: 0;
-    animation: pf-up 0.8s cubic-bezier(0.16,1,0.3,1) forwards 0.7s;
-  }
-
-  .pf-actions {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    gap: 28px;
-    padding-bottom: 8px;
+    justify-content: flex-end;
+    margin-top: 4rem
+  }
+
+  .footer-eyebrow {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(0.75rem, 1.5vw, 1rem);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #888;
     opacity: 0;
-    animation: pf-up 0.8s cubic-bezier(0.16,1,0.3,1) forwards 0.75s;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
 
-  .pf-icon-row {
-    display: flex;
-    gap: 10px;
-    align-items: center;
+  .footer-root.in-view .footer-eyebrow {
+    opacity: 1;
+    transform: translateY(0);
   }
 
-  .pf-icon-btn {
+  .pill-arena {
     position: relative;
-    width: 52px; height: 52px;
-    border-radius: 14px;
-    border: 1px solid var(--border);
-    background: rgba(255,255,255,0.02);
+    width: 100%;
+    min-height: 520px;
+    margin-top: -2rem;
+  }
+
+  .pill {
+    position: absolute;
+    border-radius: 9999px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--muted);
-    text-decoration: none;
-    transition: color 0.3s, border-color 0.3s, background 0.3s, transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
-    overflow: visible;
-  }
-  .pf-icon-btn::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 14px;
-    background: radial-gradient(circle at 50% 120%, var(--glow) 0%, transparent 70%);
+    user-select: none;
+    transform: translateY(-120vh) rotate(var(--rot-start));
     opacity: 0;
-    transition: opacity 0.3s;
-  }
-  .pf-icon-btn:hover::before { opacity: 1; }
-  .pf-icon-btn:hover {
-    color: var(--gold);
-    border-color: rgba(201,169,110,0.35);
-    background: rgba(201,169,110,0.05);
-    transform: translateY(-5px);
-    box-shadow: 0 12px 28px rgba(201,169,110,0.1);
-  }
-  .pf-icon-btn svg {
-    width: 20px; height: 20px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.6;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    position: relative;
-    z-index: 1;
+    transition: transform 0s, opacity 0s, box-shadow 0.3s ease, filter 0.3s ease;
+    will-change: transform;
   }
 
-  .pf-tip {
-    position: absolute;
-    bottom: calc(100% + 10px);
-    left: 50%;
-    transform: translateX(-50%) translateY(6px);
-    background: var(--card);
-    border: 1px solid rgba(201,169,110,0.2);
-    color: var(--gold);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 5px 10px;
-    border-radius: 6px;
-    white-space: nowrap;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.2s, transform 0.2s;
-    z-index: 10;
-  }
-  .pf-tip::after {
-    content: '';
-    position: absolute;
-    top: 100%; left: 50%;
-    transform: translateX(-50%);
-    border: 4px solid transparent;
-    border-top-color: rgba(201,169,110,0.2);
-  }
-  .pf-icon-btn:hover .pf-tip {
+  .pill.landed {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0) rotate(var(--rot-end));
+    transition:
+      transform var(--fall-dur) cubic-bezier(0.22, 1.2, 0.36, 1) var(--fall-delay),
+      opacity 0.01s var(--fall-delay),
+      box-shadow 0.3s ease,
+      filter 0.3s ease;
   }
 
-  .pf-resume-btn {
-    position: relative;
-    display: inline-flex;
+  .pill:hover {
+    filter: brightness(1.08) saturate(1.1);
+    box-shadow: 0 18px 50px rgba(0,0,0,0.18);
+    z-index: 10;
+    transform: translateY(var(--hover-y, -6px)) rotate(var(--rot-end)) scale(1.03) !important;
+    transition:
+      transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+      box-shadow 0.3s ease,
+      filter 0.3s ease !important;
+  }
+
+  .pill span {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    white-space: nowrap;
+    line-height: 1;
+  }
+
+  .pill-say-hi {
+    --fall-dur: 0.75s;
+    --fall-delay: 0.2s;
+    background: var(--yellow);
+    color: var(--black);
+    width: clamp(100px, 14vw, 160px);
+    height: clamp(180px, 28vw, 300px);
+    top: 150px;
+    left: 21%;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform-origin: center;
+  }
+  .pill-say-hi span {
+    font-size: clamp(1.2rem, 3vw, 2.4rem);
+    transform: rotate(180deg);
+  }
+
+  .pill-reach-out {
+    --fall-dur: 0.85s;
+    --fall-delay: 0.35s;
+    background: var(--green);
+    color: var(--dark-green);
+    width: clamp(220px, 38vw, 500px);
+    height: clamp(60px, 9vw, 100px);
+    top: 140px;
+    left: 40%;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  }
+  .pill-reach-out span { font-size: clamp(1.3rem, 3.2vw, 3rem); }
+
+  .pill-chat {
+    --fall-dur: 0.8s;
+    --fall-delay: 0.5s;
+    background: var(--maroon);
+    color: #fff;
+    width: clamp(240px, 42vw, 560px);
+    height: clamp(65px, 9.5vw, 105px);
+    top: 240px;
+    left: 35%;
+    box-shadow: 0 8px 30px rgba(122,31,46,0.25);
+  }
+  .pill-chat span { font-size: clamp(1.4rem, 3.5vw, 3.2rem); }
+
+  .pill-message {
+    --fall-dur: 0.9s;
+    --fall-delay: 0.65s;
+    background: var(--pink);
+    color: #ffc0d3;
+    width: clamp(260px, 55vw, 720px);
+    height: clamp(70px, 10vw, 115px);
+    top: 345px;
+    left: 35%;
+    box-shadow: 0 8px 30px rgba(214,63,110,0.3);
+  }
+  .pill-message span { font-size: clamp(1.4rem, 3.8vw, 3.5rem); }
+
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 15px 30px;
-    background: transparent;
-    border: 1px solid rgba(201,169,110,0.4);
-    color: var(--gold);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    font-weight: 400;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-radius: 8px;
+    justify-content: center;
+    transform: translateY(-120vh);
+    opacity: 0;
+    transition: transform 0s, opacity 0s;
     cursor: pointer;
     overflow: hidden;
-    transition: color 0.3s, border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    will-change: transform;
   }
-  .pf-resume-btn::before {
+
+  .circle.landed {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition:
+      transform var(--fall-dur) cubic-bezier(0.22, 1.2, 0.36, 1) var(--fall-delay),
+      opacity 0.01s var(--fall-delay),
+      box-shadow 0.3s ease,
+      filter 0.3s ease;
+  }
+
+  .circle:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.2);
+    transform: translateY(-8px) scale(1.05) !important;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s, filter 0.3s !important;
+  }
+
+  .circle-chat {
+    --fall-dur: 0.7s;
+    --fall-delay: 0.15s;
+    width: clamp(150px, 15vw, 220px);
+    height: clamp(150px, 15vw, 220px);
+    background: var(--black);
+    top: 300px;
+    left: 4%;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    z-index: 6;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%231a1a1a'/%3E%3Cg opacity='0.6'%3E%3Ccircle cx='30' cy='40' r='10' fill='%23b8860b'/%3E%3Ccircle cx='60' cy='20' r='8' fill='%238b6914'/%3E%3Ccircle cx='90' cy='50' r='12' fill='%23a07820'/%3E%3Ccircle cx='20' cy='80' r='9' fill='%23c49a1a'/%3E%3Ccircle cx='50' cy='100' r='11' fill='%23886010'/%3E%3Ccircle cx='80' cy='70' r='7' fill='%23b07818'/%3E%3Ccircle cx='110' cy='30' r='10' fill='%23986816'/%3E%3Ccircle cx='140' cy='60' r='9' fill='%23c89e1c'/%3E%3Ccircle cx='170' cy='20' r='8' fill='%238a6010'/%3E%3Ccircle cx='130' cy='90' r='11' fill='%23a07020'/%3E%3Ccircle cx='160' cy='110' r='10' fill='%23b88018'/%3E%3Ccircle cx='190' cy='80' r='7' fill='%23987018'/%3E%3Ccircle cx='40' cy='130' r='9' fill='%23c49018'/%3E%3Ccircle cx='70' cy='150' r='10' fill='%23886410'/%3E%3Ccircle cx='100' cy='120' r='8' fill='%23a07218'/%3E%3Ccircle cx='130' cy='140' r='11' fill='%23b07818'/%3E%3Ccircle cx='160' cy='160' r='9' fill='%23c8961a'/%3E%3Ccircle cx='190' cy='130' r='8' fill='%23907010'/%3E%3Ccircle cx='20' cy='170' r='10' fill='%23b08020'/%3E%3Ccircle cx='60' cy='185' r='8' fill='%23987018'/%3E%3Ccircle cx='100' cy='175' r='9' fill='%23c09018'/%3E%3Ccircle cx='145' cy='180' r='10' fill='%23886010'/%3E%3Ccircle cx='180' cy='175' r='8' fill='%23a87018'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: cover;
+  }
+
+  .circle-chat::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(201,169,110,0.12) 0%, rgba(201,169,110,0.04) 100%);
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  .pf-resume-btn:hover::before { opacity: 1; }
-  .pf-resume-btn:hover {
-    color: var(--accent);
-    border-color: rgba(201,169,110,0.7);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 32px rgba(201,169,110,0.12), 0 0 0 1px rgba(201,169,110,0.1);
-  }
-  .pf-resume-btn svg {
-    width: 14px; height: 14px;
-    fill: none; stroke: currentColor;
-    stroke-width: 1.8;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    transition: transform 0.3s;
-    position: relative; z-index: 1;
-    flex-shrink: 0;
-  }
-  .pf-resume-btn:hover svg { transform: translateY(2px); }
-  .pf-resume-btn span { position: relative; z-index: 1; }
-
-  .pf-marquee-wrap {
-    overflow: hidden;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 14px 0;
-    margin-bottom: 70px;
-    opacity: 0;
-    animation: pf-fadeIn 0.8s ease forwards 0.9s;
-  }
-  .pf-marquee-track {
-    display: flex;
-    animation: pf-marquee 24s linear infinite;
-    width: max-content;
-  }
-  .pf-marquee-item {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 0 32px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.25em;
-    color: var(--muted2);
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-  .pf-marquee-dot {
-    width: 3px; height: 3px;
+    background: radial-gradient(circle at 50% 50%, transparent 40%, rgba(0,0,0,0.5) 100%);
     border-radius: 50%;
-    background: var(--gold);
-    opacity: 0.5;
-    flex-shrink: 0;
+    transform: rotate(13deg);
   }
 
-  .pf-bottom {
+  .circle-chat svg {
+    position: relative;
+    z-index: 2;
+    width: 42%;
+    height: 42%;
+    transform: rotate(-14deg);
+  }
+
+  .circle-email {
+    --fall-dur: 0.72s;
+    --fall-delay: 0.55s;
+    width: clamp(150px, 15vw, 220px);
+    height: clamp(150px, 15vw, 220px);
+    background: var(--cyan);
+    top: 150px;
+    right: 2%;
+    box-shadow: 0 8px 30px rgba(110,216,216,0.3);
+  }
+
+  .circle-email svg {
+    width: 48%;
+    height: 48%;
+    transform: rotate(10deg);
+  }
+
+  .footer-bottom {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding-top: 28px;
-    border-top: 1px solid var(--border);
+    align-items: flex-end;
+    margin-top: -1rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
     opacity: 0;
-    animation: pf-fadeIn 0.8s ease forwards 1.05s;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease 1.2s, transform 0.7s ease 1.2s;
   }
-  .pf-copy {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    color: var(--muted2);
-    letter-spacing: 0.1em;
+
+  .footer-root.in-view .footer-bottom {
+    opacity: 1;
+    transform: translateY(0);
   }
-  .pf-copy em {
-    color: var(--muted);
-    font-style: normal;
+
+  .footer-brand {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+    font-weight: 800;
+    color: var(--black);
+    letter-spacing: -1px;
   }
-  .pf-top-btn {
+
+  .footer-links {
     display: flex;
-    align-items: center;
-    gap: 8px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    color: var(--muted2);
-    text-transform: uppercase;
-    background: none;
-    border: none;
-    cursor: pointer;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .footer-links a {
     text-decoration: none;
-    transition: color 0.3s;
-  }
-  .pf-top-btn:hover { color: var(--gold); }
-  .pf-top-btn svg {
-    width: 14px; height: 14px;
-    fill: none; stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    transition: transform 0.3s;
-  }
-  .pf-top-btn:hover svg { transform: translateY(-4px); }
-
-  @keyframes pf-ruleIn {
-    to { opacity: 1; transform: scaleX(1); }
-  }
-  @keyframes pf-up {
-    from { opacity: 0; transform: translateY(28px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes pf-fadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
-  @keyframes pf-marquee {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
+    color: #888;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
   }
 
-  @media (max-width: 700px) {
-    .pf-wrap { padding: 60px 24px 40px; }
-    .pf-main { grid-template-columns: 1fr; gap: 40px; }
-    .pf-actions { align-items: flex-start; }
-    .pf-bottom { flex-direction: column; gap: 20px; }
+  .footer-links a:hover { color: var(--black); }
+
+  .footer-copy {
+    font-size: 0.8rem;
+    color: #aaa;
+  }
+
+  @keyframes wiggle {
+    0%   { transform: translateY(0) rotate(var(--rot-end)); }
+    20%  { transform: translateY(-10px) rotate(calc(var(--rot-end) + 3deg)); }
+    40%  { transform: translateY(4px) rotate(calc(var(--rot-end) - 2deg)); }
+    60%  { transform: translateY(-5px) rotate(calc(var(--rot-end) + 1deg)); }
+    80%  { transform: translateY(2px) rotate(var(--rot-end)); }
+    100% { transform: translateY(0) rotate(var(--rot-end)); }
+  }
+
+  .pill.bounce {
+    animation: wiggle 0.5s ease forwards;
+  }
+
+  @keyframes circleWiggle {
+    0%   { transform: translateY(0) scale(1); }
+    25%  { transform: translateY(-10px) scale(1.04); }
+    50%  { transform: translateY(4px) scale(0.97); }
+    75%  { transform: translateY(-4px) scale(1.01); }
+    100% { transform: translateY(0) scale(1); }
+  }
+
+  .circle.bounce {
+    animation: circleWiggle 0.5s ease forwards;
+  }
+
+  .location-tag {
+    position: absolute;
+    top: 1.5rem;
+    left: 3rem;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--dark-green);
+    letter-spacing: 0.05em;
+    opacity: 0;
+    transition: opacity 0.6s ease 0.1s;
+  }
+
+  .footer-root.in-view .location-tag { opacity: 1; }
+
+  .time-tag {
+    position: absolute;
+    top: 1.5rem;
+    right: 3rem;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--dark-green);
+    opacity: 0;
+    transition: opacity 0.6s ease 0.1s;
+  }
+
+  .footer-root.in-view .time-tag { opacity: 1; }
+
+  .particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    animation: floatUp var(--dur) ease-in-out var(--delay) infinite;
+  }
+
+  @keyframes floatUp {
+    0%   { opacity: 0; transform: translateY(0) scale(0.8); }
+    20%  { opacity: 0.6; }
+    80%  { opacity: 0.3; }
+    100% { opacity: 0; transform: translateY(-80px) scale(1.1); }
   }
 `;
 
-// ── SVG Icons ──────────────────────────────────────────────
-const EmailIcon = () => (
-  <svg viewBox="0 0 24 24">
-    <rect x="2" y="4" width="20" height="16" rx="2.5" />
-    <path d="m22 6-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 6" />
-  </svg>
-);
+const particleColors = ['#d9e84a', '#b8d4a0', '#d63f6e', '#6ed8d8', '#7a1f2e'];
 
-const LinkedInIcon = () => (
-  <svg viewBox="0 0 24 24">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-    <rect width="4" height="12" x="2" y="9" />
-    <circle cx="4" cy="4" r="2" />
-  </svg>
-);
-
-const GitHubIcon = () => (
-  <svg viewBox="0 0 24 24">
-    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-  </svg>
-);
-
-const DownloadIcon = () => (
-  <svg viewBox="0 0 24 24">
-    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-    <polyline points="7 10 12 15 17 10" />
-    <line x1="12" y1="15" x2="12" y2="3" />
-  </svg>
-);
-
-const ChevronUpIcon = () => (
-  <svg viewBox="0 0 24 24">
-    <polyline points="18 15 12 9 6 15" />
-  </svg>
-);
-
-// ── Marquee items ──────────────────────────────────────────
-// const MARQUEE_ITEMS = [
-//   "Available for opportunities",
-//   "Open to collaboration",
-//   "Let's build something great",
-//   "Frontend · Full-Stack · Design Systems",
-// ];
-
-// ── Main Component ─────────────────────────────────────────
-export default function PortfolioFooter({
-  name = "Your Name",
-  tagline = "Crafting thoughtful digital experiences &\nturning complex ideas into clean, elegant code.",
-  email = "hello@yourname.com",
-  linkedIn = "https://linkedin.com/in/yourname",
-  github = "https://github.com/yourname",
-  resumeUrl = "#",
-  year = new Date().getFullYear(),
-}) {
-  const styleRef = useRef(null);
-
-  useEffect(() => {
-    if (!document.getElementById("pf-styles")) {
-      const tag = document.createElement("style");
-      tag.id = "pf-styles";
-      tag.textContent = styles;
-      document.head.appendChild(tag);
-    }
-  }, []);
-
-  const scrollToTop = (e) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  // Duplicate marquee items for seamless loop
-//   const allItems = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS, ...MARQUEE_ITEMS, ...MARQUEE_ITEMS];
-
-  const [firstName, ...rest] = name.split(" ");
-  const lastName = rest.join(" ");
+function Particles() {
+  const particles = Array.from({ length: 18 }, (_, i) => {
+    const size = 4 + Math.random() * 8;
+    return {
+      id: i,
+      size,
+      color: particleColors[Math.floor(Math.random() * particleColors.length)],
+      left: `${Math.random() * 100}%`,
+      bottom: `${10 + Math.random() * 60}%`,
+      dur: `${3 + Math.random() * 4}s`,
+      delay: `${Math.random() * 5}s`,
+    };
+  });
 
   return (
-    <footer className="pf-footer">
-      <div className="pf-blob pf-blob-1" />
-      <div className="pf-blob pf-blob-2" />
-      <div className="pf-grain" />
-      <div className="pf-rule" />
+    <div className="particles">
+      {particles.map(p => (
+        <div
+          key={p.id}
+          className="particle"
+          style={{
+            width: p.size,
+            height: p.size,
+            background: p.color,
+            left: p.left,
+            bottom: p.bottom,
+            '--dur': p.dur,
+            '--delay': p.delay,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
 
-      <div className="pf-wrap">
+function useClock() {
+  const [time, setTime] = useState('');
+  useEffect(() => {
+    const update = () => {
+      const now = new Date();
+      const h = now.getHours() % 12 || 12;
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const ampm = now.getHours() >= 12 ? 'PM' : 'AM';
+      setTime(`${h}:${m} ${ampm}`);
+    };
+    update();
+    const id = setInterval(update, 1000);
+    return () => clearInterval(id);
+  }, []);
+  return time;
+}
 
-        {/* ── Main grid ── */}
-        <div className="pf-main">
+function useBounce() {
+  const triggerBounce = (el) => {
+    if (!el) return;
+    el.classList.remove('bounce');
+    void el.offsetWidth;
+    el.classList.add('bounce');
+    setTimeout(() => el.classList.remove('bounce'), 600);
+  };
+  return triggerBounce;
+}
 
-          {/* LEFT: Name + tagline */}
-          <div>
-            <div className="pf-eyebrow">
-              <div className="pf-eyebrow-line" />
-              <span className="pf-eyebrow-text">Get in touch</span>
-            </div>
+export default function AnimatedFooter() {
+  const footerRef = useRef(null);
+  const clock = useClock();
+  const triggerBounce = useBounce();
 
-            <h2 className="pf-name">
-              {firstName}{" "}
-              <span className="pf-name-italic">{lastName}</span>
-            </h2>
+  useEffect(() => {
+    const footer = footerRef.current;
+    if (!footer) return;
 
-            <p className="pf-tagline">
-              {tagline.split("\n").map((line, i) => (
-                <span key={i}>
-                  {line}
-                  {i < tagline.split("\n").length - 1 && <br />}
-                </span>
-              ))}
-            </p>
+    const pills = footer.querySelectorAll('.pill, .circle');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          footer.classList.add('in-view');
+          pills.forEach((el) => {
+            setTimeout(() => {
+              el.classList.add('landed');
+              const dur = parseFloat(getComputedStyle(el).getPropertyValue('--fall-dur')) * 1000;
+              const delay = parseFloat(getComputedStyle(el).getPropertyValue('--fall-delay')) * 1000;
+              setTimeout(() => {
+                el.classList.add('bounce');
+                setTimeout(() => el.classList.remove('bounce'), 600);
+              }, dur + delay + 50);
+            }, 10);
+          });
+          observer.unobserve(footer);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    observer.observe(footer);
+    return () => observer.disconnect();
+  }, []);
+
+  const handlePillClick = (e) => {
+    triggerBounce(e.currentTarget);
+  };
+
+  return (
+    <>
+      <style>{styles}</style>
+      <footer className="footer-root" ref={footerRef}>
+        <Particles />
+
+        <div className="location-tag">Demak, Central Java</div>
+        <div className="time-tag">{clock}</div>
+
+        <div className="footer-eyebrow">Available for new projects</div>
+
+        <div className="pill-arena">
+
+          {/* Pill: Say hiii (vertical) */}
+          <div className="pill pill-say-hi" onClick={handlePillClick}>
+            <span>Say hiii</span>
           </div>
 
-          {/* RIGHT: Icons + Resume */}
-          <div className="pf-actions">
-
-            <div className="pf-icon-row">
-
-              {/* Email */}
-              <a href={`mailto:${email}`} className="pf-icon-btn" aria-label="Email">
-                <span className="pf-tip">Email</span>
-                <EmailIcon />
-              </a>
-
-              {/* LinkedIn */}
-              <a href={linkedIn} target="_blank" rel="noopener noreferrer" className="pf-icon-btn" aria-label="LinkedIn">
-                <span className="pf-tip">LinkedIn</span>
-                <LinkedInIcon />
-              </a>
-
-              {/* GitHub */}
-              <a href={github} target="_blank" rel="noopener noreferrer" className="pf-icon-btn" aria-label="GitHub">
-                <span className="pf-tip">GitHub</span>
-                <GitHubIcon />
-              </a>
-
-            </div>
-
-            {/* Resume */}
-            <a href={resumeUrl} className="pf-resume-btn" download aria-label="Download Resume">
-              <DownloadIcon />
-              <span>Resume</span>
-            </a>
-
+          {/* Circle: chat icon with leopard texture */}
+          <div className="circle circle-chat" onClick={handlePillClick}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
           </div>
+
+          {/* Pill: Reach out */}
+          <div className="pill pill-reach-out" onClick={handlePillClick}>
+            <span>Reach out</span>
+          </div>
+
+          {/* Circle: email */}
+          <div className="circle circle-email" onClick={handlePillClick}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+          </div>
+
+          {/* Pill: Let's chat */}
+          <div className="pill pill-chat" onClick={handlePillClick}>
+            <span>Let's chat</span>
+          </div>
+
+          {/* Pill: Send a message */}
+          <div className="pill pill-message" onClick={handlePillClick}>
+            <span>Send a message</span>
+          </div>
+
         </div>
 
-     
-        {/* <div className="pf-marquee-wrap">
-          <div className="pf-marquee-track">
-            {allItems.map((item, i) => (
-              <span className="pf-marquee-item" key={i}>
-                {item}
-                <span className="pf-marquee-dot" />
-              </span>
-            ))}
-          </div>
-        </div> */}
-
-        {/* ── Bottom bar ── */}
-        <div className="pf-bottom">
-          <p className="pf-copy">
-            © {year} <em>{name}</em> — All rights reserved
-          </p>
-          <a href="#" className="pf-top-btn" onClick={scrollToTop}>
-            Back to top
-            <ChevronUpIcon />
-          </a>
+        <div className="footer-bottom">
+          <div className="footer-brand">yourname.co</div>
+          <ul className="footer-links">
+            <li><a href="#">Work</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Journal</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+          <div className="footer-copy">© 2026 — All rights reserved</div>
         </div>
 
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 }

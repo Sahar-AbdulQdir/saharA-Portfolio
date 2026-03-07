@@ -4,14 +4,14 @@
   justify-content: center;
   align-items: flex-start;
   padding: 40px;
-  background: linear-gradient(90deg, #3F3558, #372E4B, #000000);
+  background: linear-gradient(90deg, #baa3f3, #d6c8f3, #f4e4ff);
 }
 
 .content-container {
-  background-color: #000000;
+  background-color: #ffffff;
   /* max-width: 1000px; */
   width: 100%;
-  padding: 20px;
+  /* padding: 20px; */
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
