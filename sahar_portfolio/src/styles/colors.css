@@ -1,0 +1,31 @@
+:root {
+  /* Primary Colors */
+  --lilac: #BB94B5;
+  --lilac-soft: #C28EB2;
+
+  /* Blues */
+  --prussian-blue: #0E1F4B;
+  --yale-blue: #26415C;
+  --powder-blue: #9CAFCC;
+
+  /* Light Accent */
+  --thistle: #DFC9D5;
+
+  /* Dark Base */
+  --ink-black: #0E1F2F;
+
+  /* Gradients */
+  --gradient-main: linear-gradient(
+    135deg,
+    #BB94B5,
+    #C28EB2,
+    #9CAFCC,
+    #26415C
+  );
+
+  --gradient-soft: linear-gradient(
+    180deg,
+    #DFC9D5,
+    #BB94B5
+  );
+}

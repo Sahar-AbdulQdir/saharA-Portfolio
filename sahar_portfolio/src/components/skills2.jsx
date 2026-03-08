@@ -1,25 +1,27 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 
 const skills = [
-  { name: "React",      color: "#0EA5E9", emoji: "⚛️" },
-  { name: "TypeScript", color: "#6366F1", emoji: "🔷" },
-  { name: "Node.js",    color: "#22C55E", emoji: "🟩" },
-  { name: "CSS",        color: "#3B82F6", emoji: "🎨" },
-  { name: "Python",     color: "#EAB308", emoji: "🐍" },
-  { name: "GraphQL",    color: "#EC4899", emoji: "◈"  },
-  { name: "Docker",     color: "#0284C7", emoji: "🐳" },
-  { name: "Git",        color: "#EF4444", emoji: "🌿" },
-  { name: "Figma",      color: "#F97316", emoji: "🖌️" },
-  { name: "AWS",        color: "#F59E0B", emoji: "☁️" },
-  { name: "PostgreSQL", color: "#0EA5E9", emoji: "🐘" },
-  { name: "Redux",      color: "#8B5CF6", emoji: "🔮" },
-  { name: "Rust",       color: "#DC2626", emoji: "⚙️" },
-  { name: "Swift",      color: "#FB923C", emoji: "🦅" },
-  { name: "Tailwind",   color: "#06B6D4", emoji: "💨" },
-  { name: "Firebase",   color: "#D97706", emoji: "🔥" },
-  { name: "Next.js",    color: "#374151", emoji: "▲"  },
-  { name: "MongoDB",    color: "#16A34A", emoji: "🍃" },
+  { name: "React",      color: "#60A5FA", emoji: "⚛️" },  // soft blue
+  { name: "TypeScript", color: "#818CF8", emoji: "🔷" },  // indigo
+  { name: "Node.js",    color: "#5EEAD4", emoji: "🟩" },  // tiffany mint
+  { name: "CSS",        color: "#38BDF8", emoji: "🎨" },  // sky blue
+  { name: "Python",     color: "#A78BFA", emoji: "🐍" },  // soft purple
+  { name: "GraphQL",    color: "#F0ABFC", emoji: "◈"  },  // light pink
+  { name: "Docker",     color: "#22D3EE", emoji: "🐳" },  // cyan
+  { name: "Git",        color: "#C084FC", emoji: "🌿" },  // lavender
+  { name: "Figma",      color: "#F9A8D4", emoji: "🖌️" },  // pastel pink
+  { name: "AWS",        color: "#67E8F9", emoji: "☁️" },  // icy blue
+  { name: "PostgreSQL", color: "#93C5FD", emoji: "🐘" },  // light blue
+  { name: "Redux",      color: "#A78BFA", emoji: "🔮" },  // violet
+  { name: "Rust",       color: "#C4B5FD", emoji: "⚙️" },  // pale purple
+  { name: "Swift",      color: "#F5D0FE", emoji: "🦅" },  // soft lilac pink
+  { name: "Tailwind",   color: "#5EEAD4", emoji: "💨" },  // mint
+  { name: "Firebase",   color: "#7DD3FC", emoji: "🔥" },  // light cyan
+  { name: "Next.js",    color: "#A5B4FC", emoji: "▲"  },  // cool indigo
+  { name: "MongoDB",    color: "#99F6E4", emoji: "🍃" },  // pale tiffany
 ];
+
+
 
 function useStableRandom(count) {
   return useMemo(() => Array.from({ length: count }, (_, i) => ({
@@ -117,7 +119,7 @@ function SkillButton({ skill, rand, progress }) {
         style={{
           position: "relative", zIndex: 1,
           padding: "10px 20px",
-          border: `2px solid ${hovered ? skill.color : "rgba(0,0,0,0.12)"}`,
+          border: `2px solid ${hovered ? skill.color : "#000000be"}`,
           borderRadius: "999px",
           background: hovered ? `${skill.color}18` : "rgba(255,255,255,0.9)",
           color: hovered ? skill.color : "#444",
@@ -176,7 +178,7 @@ export default function Skills() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@800&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background: #ffffff; }
+        // body { background: #ffffff; }
 
         .skills-section {
           min-height: 70vh;
@@ -205,13 +207,13 @@ export default function Skills() {
           pointer-events: none;
         }
         .section-title {
-          font-family: 'Syne', sans-serif;
+          font-family: sans-serif;
           font-weight: 800;
           font-size: clamp(38px, 8vw, 66px);
           color: #1a1a2e;
           letter-spacing: -0.03em;
           text-align: center;
-          margin-bottom: 16px;
+          // margin-bottom: 16px;
           line-height: 1;
           position: relative; z-index: 2;
         }
@@ -221,16 +223,17 @@ export default function Skills() {
           -webkit-text-fill-color: transparent;
           background-clip: text;
         }
-        .section-sub {
-          font-family: 'Space Mono', monospace;
-          font-size: 12px;
-          color: rgba(0,0,0,0.3);
-          letter-spacing: 0.25em;
-          text-transform: uppercase;
-          margin-bottom: 60px;
-          position: relative; z-index: 2;
-        }
+        // .section-sub {
+        //   font-family: 'Space Mono', monospace;
+        //   font-size: 12px;
+        //   color: rgba(0,0,0,0.3);
+        //   letter-spacing: 0.25em;
+        //   text-transform: uppercase;
+        //   margin-bottom: 60px;
+        //   position: relative; z-index: 2;
+        // }
         .skills-cloud {
+        margin-top: 60px;
           max-width: 800px;
           text-align: center;
           position: relative; z-index: 2;
@@ -244,7 +247,7 @@ export default function Skills() {
         <div className="bg-grid" />
         <div className="bg-glow" />
         <h2 className="section-title">what do I <span>bring </span>to the <span>table</span></h2>
-        <p className="section-sub">hover to ignite · click to burst</p>
+        {/* <p className="section-sub">hover to ignite · click to burst</p> */}
         <div className="skills-cloud">
           {skills.map((skill, i) => (
             <SkillButton

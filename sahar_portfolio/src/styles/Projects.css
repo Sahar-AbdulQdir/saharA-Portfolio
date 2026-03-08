@@ -10,9 +10,8 @@
 
 .projects-section {
   min-height: 100vh;
-  background: #ffffff;
+  background: #000000;
   padding: 72px 36px 80px;
-  margin-top: 10rem;
 }
 
 .projects-container {
@@ -33,7 +32,7 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0);
   border-radius: 100px;
   padding: 5px 13px;
   margin-bottom: 18px;

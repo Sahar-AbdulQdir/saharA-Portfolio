@@ -37,11 +37,11 @@ const styles = `
     font-weight: 600;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: #E9D5FF;
+    color: #ffffff;
   }
 
   .marqueeStar {
-    color: #d7cdff;
+    color: #C28EB2;
     font-size: 16px;
     display: inline-block;
     animation: rotateStar 5s linear infinite;
@@ -145,7 +145,7 @@ const styles = `
   }
 
   .roleDesigner {
-    background: #000000; color: #E9D5FF;
+    background: #000000; color: #DFC9D5;
     padding: 8px 18px; border-radius: 15px;
     font-size: 30px; font-family: 'Cormorant Garamond', serif;
     font-weight: 300; letter-spacing: 2px; text-transform: lowercase;
@@ -210,7 +210,7 @@ const styles = `
 
   .imageWrapper {
     border-radius: 30px; overflow: hidden;
-    box-shadow: 0 10px 30px rgba(124,58,237,0.3);
+    box-shadow: 0 10px 30px #C28EB2;
     opacity: 0;
     animation: revealScale 1s cubic-bezier(0.22,1,0.36,1) 0.4s forwards;
     position: relative;
@@ -219,7 +219,7 @@ const styles = `
   }
   .imageWrapper:hover {
     transform: scale(1.04) rotate(-1.5deg);
-    box-shadow: 0 24px 60px rgba(124,58,237,0.45);
+    box-shadow: 0 24px 60px #C28EB2;
   }
   /* shimmer sweep */
   .imageWrapper::after {
@@ -245,7 +245,7 @@ const styles = `
   /* spinning rings */
   .imageRing {
     position: absolute; inset: -14px; border-radius: 46px;
-    border: 2px dashed rgba(124,58,237,0.3);
+    border: 2px dashed #C28EB2;
     animation: spinSlow 22s linear infinite;
     pointer-events: none;
   }
@@ -264,7 +264,7 @@ const styles = `
   /* floating availability badge */
   .badge {
     position: absolute; top: -40px; right: -36px;
-    background: #7C3AED; color: #fff;
+    background: #C28EB2; color: #fff;
     font-family: 'Cormorant Garamond', serif;
     font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
     padding: 6px 14px; border-radius: 30px;
@@ -272,7 +272,7 @@ const styles = `
     animation: revealScale 0.7s cubic-bezier(0.22,1,0.36,1) 1.1s forwards,
                bobBadge 4s ease-in-out 1.8s infinite;
     white-space: nowrap;
-    box-shadow: 0 4px 14px rgba(124,58,237,0.4);
+    box-shadow: 0 4px 14px #C28EB2;
   }
   @keyframes bobBadge {
     0%,100% { transform: translateY(0) rotate(-3deg); }
@@ -289,8 +289,8 @@ const styles = `
     transition: gap 0.3s ease;
   }
   .portfolioWrapper:hover { gap: 28px; }
-  .portfolioWrapper:hover .arrow { transform: rotate(35deg) translateY(6px); color: #4C1D95; }
-  .portfolioWrapper:hover .portfolioText { color: #4C1D95; letter-spacing: 4px; }
+  .portfolioWrapper:hover .arrow { transform: rotate(35deg) translateY(6px); color: #C28EB2; }
+  .portfolioWrapper:hover .portfolioText { color: #C28EB2; letter-spacing: 4px; }
 
   @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(18px); }
@@ -298,14 +298,14 @@ const styles = `
   }
 
   .portfolioText {
-    color: #6B21A8; font-weight: 600; letter-spacing: 2px;
+    color: #0E1F4B; font-weight: 600; letter-spacing: 2px;
     text-decoration: underline; text-transform: uppercase;
     font-family: 'Cormorant Garamond', serif; font-size: 14px;
     transition: letter-spacing 0.4s ease, color 0.3s ease;
   }
 
   .arrow {
-    font-size: 32px; color: #6B21A8;
+    font-size: 32px; color: #0E1F4B;
     transform: rotate(35deg);
     transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), color 0.3s ease;
     display: inline-block;
@@ -327,7 +327,7 @@ const styles = `
   /* ── CUSTOM CURSOR ─────────────────────────────────── */
   .cursorDot {
     width: 10px; height: 10px; border-radius: 50%;
-    background: #7C3AED;
+    background: #C28EB2;
     position: fixed; pointer-events: none; z-index: 9999;
     opacity: 0.6;
     transform: translate(-50%,-50%);
@@ -336,7 +336,7 @@ const styles = `
   }
   .cursorRing {
     width: 34px; height: 34px; border-radius: 50%;
-    border: 1.5px solid rgba(124,58,237,0.35);
+    border: 1.5px solid #C28EB2;
     position: fixed; pointer-events: none; z-index: 9998;
     transform: translate(-50%,-50%);
     transition: left 0.16s ease, top 0.16s ease;

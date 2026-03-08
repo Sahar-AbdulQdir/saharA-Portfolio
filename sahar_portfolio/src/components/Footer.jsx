@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import b1 from "../assets/Images/b5.jpg";
+import b2 from "../assets/Images/b6.jpg";
 
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
@@ -7,12 +9,12 @@ const styles = `
 
   :root {
     --cream: #f0ede6;
-    --yellow: #d9e84a;
-    --green: #b8d4a0;
-    --dark-green: #2d5a3d;
-    --maroon: #7a1f2e;
-    --pink: #d63f6e;
-    --cyan: #6ed8d8;
+    --yellow: #f568cb;
+    --green: #0E1F4B;
+    --dark-green: #78b8f8;
+    --maroon: #6e9fea;
+    --pink: #e393d7;
+    --cyan: #59e7e7;
     --black: #1a1a1a;
   }
 
@@ -151,7 +153,7 @@ const styles = `
     --fall-dur: 0.9s;
     --fall-delay: 0.65s;
     background: var(--pink);
-    color: #ffc0d3;
+    color: #ffe5ed;
     width: clamp(260px, 55vw, 720px);
     height: clamp(70px, 10vw, 115px);
     top: 345px;
@@ -201,8 +203,7 @@ const styles = `
     left: 4%;
     box-shadow: 0 8px 30px rgba(0,0,0,0.2);
     z-index: 6;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%231a1a1a'/%3E%3Cg opacity='0.6'%3E%3Ccircle cx='30' cy='40' r='10' fill='%23b8860b'/%3E%3Ccircle cx='60' cy='20' r='8' fill='%238b6914'/%3E%3Ccircle cx='90' cy='50' r='12' fill='%23a07820'/%3E%3Ccircle cx='20' cy='80' r='9' fill='%23c49a1a'/%3E%3Ccircle cx='50' cy='100' r='11' fill='%23886010'/%3E%3Ccircle cx='80' cy='70' r='7' fill='%23b07818'/%3E%3Ccircle cx='110' cy='30' r='10' fill='%23986816'/%3E%3Ccircle cx='140' cy='60' r='9' fill='%23c89e1c'/%3E%3Ccircle cx='170' cy='20' r='8' fill='%238a6010'/%3E%3Ccircle cx='130' cy='90' r='11' fill='%23a07020'/%3E%3Ccircle cx='160' cy='110' r='10' fill='%23b88018'/%3E%3Ccircle cx='190' cy='80' r='7' fill='%23987018'/%3E%3Ccircle cx='40' cy='130' r='9' fill='%23c49018'/%3E%3Ccircle cx='70' cy='150' r='10' fill='%23886410'/%3E%3Ccircle cx='100' cy='120' r='8' fill='%23a07218'/%3E%3Ccircle cx='130' cy='140' r='11' fill='%23b07818'/%3E%3Ccircle cx='160' cy='160' r='9' fill='%23c8961a'/%3E%3Ccircle cx='190' cy='130' r='8' fill='%23907010'/%3E%3Ccircle cx='20' cy='170' r='10' fill='%23b08020'/%3E%3Ccircle cx='60' cy='185' r='8' fill='%23987018'/%3E%3Ccircle cx='100' cy='175' r='9' fill='%23c09018'/%3E%3Ccircle cx='145' cy='180' r='10' fill='%23886010'/%3E%3Ccircle cx='180' cy='175' r='8' fill='%23a87018'/%3E%3C/g%3E%3C/svg%3E");
-    background-size: cover;
+    // background-image: ur
   }
 
   .circle-chat::after {
@@ -484,7 +485,7 @@ export default function AnimatedFooter() {
           </div>
 
           {/* Circle: chat icon with leopard texture */}
-          <div className="circle circle-chat" onClick={handlePillClick}>
+          <div className="circle circle-chat"  style={{ backgroundImage: `url(${b1})` }}  onClick={handlePillClick}>
             <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
             </svg>

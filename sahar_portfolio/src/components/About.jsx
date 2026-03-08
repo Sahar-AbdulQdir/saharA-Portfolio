@@ -139,7 +139,7 @@ export default function AboutMe() {
           border-radius: 50%;
           filter: blur(100px);
           pointer-events: none;
-          background: radial-gradient(circle, rgba(167,139,250,0.45) 0%, rgba(196,181,253,0.2) 40%, transparent 70%);
+          background: radial-gradient(circle, #a78bfa73 0%, #c4b5fd33 40%, transparent 70%);
           transform: translate(-50%, -50%);
           transition: left 0.08s linear, top 0.08s linear;
           mix-blend-mode: multiply;
@@ -161,7 +161,7 @@ export default function AboutMe() {
         /* Label */
         .ab-label {
           font-size: 10.5px; letter-spacing: 0.28em; text-transform: uppercase;
-          color: #7c3aed; margin-bottom: 22px;
+          color: #0E1F2F; margin-bottom: 22px;
           opacity: 0; transition: opacity 0.7s ease 0.3s;
         }
         .ab-content.in .ab-label { opacity: 1; }
@@ -171,16 +171,16 @@ export default function AboutMe() {
           font-family: 'Playfair Display', serif;
           font-size: clamp(38px, 6.5vw, 60px);
           font-weight: 400; 
-          color: #2e1065;
+          color: #be569f;
           margin-bottom: 12px; min-height: 1.2em;
         }
         .ab-heading .line2 {
-          font-style: italic; color: #6d28d9;
+          font-style: italic; color: #ec79db;
         }
 
         .h-cursor {
           display: inline-block; width: 3px; height: 0.8em;
-          background: #7c3aed; margin-left: 4px; vertical-align: middle;
+          background: #ed3ac0; margin-left: 4px; vertical-align: middle;
           border-radius: 2px; animation: blink 0.85s step-end infinite;
         }
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
@@ -188,7 +188,7 @@ export default function AboutMe() {
         /* Divider */
         .ab-divider {
           width: 0; height: 1.5px;
-          background: linear-gradient(90deg, #7c3aed, #c4b5fd 50%, transparent);
+          background: linear-gradient(90deg, #e73aed, #c4b5fd 50%, transparent);
           border-radius: 2px; margin: 32px 0;
           transition: width 1.2s cubic-bezier(0.23,1,0.32,1) 0.4s;
         }
@@ -197,7 +197,7 @@ export default function AboutMe() {
         /* Paragraph */
         .ab-para {
           font-size: clamp(16px, 2.1vw, 18.5px);
-          line-height: 1.95; color: #4c1d95; font-weight: 300;
+          line-height: 1.95; color: #ae2891; font-weight: 300;
           min-height: 8em;
         }
 
@@ -212,11 +212,11 @@ export default function AboutMe() {
         }
         .w.show { opacity: 1; transform: translateY(0); }
 
-        .w.highlight { color: #5b21b6; font-weight: 400; }
-        .w.purple    { color: #6d28d9; font-weight: 400; }
+        .w.highlight { color: #a01f84; font-weight: 400; }
+        .w.purple    { color: #7a1664; font-weight: 400; }
         .w.italic-glow {
           font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.07em;
-          background: linear-gradient(120deg, #5b21b6, #7c3aed, #a78bfa);
+          background: linear-gradient(120deg, #ae2891, #b14299, #931c79);
           -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
 
@@ -251,14 +251,14 @@ export default function AboutMe() {
 
         .ab-dot {
           width: 7px; height: 7px; border-radius: 50%;
-          background: #7c3aed; flex-shrink: 0;
+          background: #C28EB2; flex-shrink: 0;
           animation: pulse 2.4s ease-in-out infinite;
         }
         @keyframes pulse {
           0%,100% { box-shadow: 0 0 0 0 rgba(124,58,237,0.5); }
           60%      { box-shadow: 0 0 0 8px rgba(124,58,237,0); }
         }
-        .ab-status { font-size: 12px; letter-spacing: 0.08em; color: #7c3aed; }
+        .ab-status { font-size: 12px; letter-spacing: 0.08em; color: #0E1F2F; }
 
         @media (max-width: 600px) {
           .ab-root { padding: 60px 24px; }

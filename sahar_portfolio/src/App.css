@@ -4,7 +4,8 @@
   justify-content: center;
   align-items: flex-start;
   padding: 40px;
-  background: linear-gradient(90deg, #baa3f3, #d6c8f3, #f4e4ff);
+  background: linear-gradient(180deg,rgba(254, 232, 255, 1) 0%, rgba(223, 201, 213, 1) 20%, rgba(194, 142, 178, 1) 40%, rgba(156, 175, 204, 1) 60%, rgb(96, 139, 183) 80%, rgb(101, 175, 224) 100%);
+  /* background: #ffffff; */
 }
 
 .content-container {
@@ -13,7 +14,7 @@
   width: 100%;
   /* padding: 20px; */
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.372);
 }
 
 h1, h2 {

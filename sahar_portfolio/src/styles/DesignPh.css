@@ -7,7 +7,7 @@
   align-items: center;
   gap: 20px;
   padding: 60px 20px;
-  background: radial-gradient(circle,rgba(239, 188, 245, 1) 0%, rgba(239, 94, 255, 1) 8%, rgba(239, 94, 255, 1) 50%, rgba(254, 232, 255, 1) 82%, rgba(255, 255, 255, 1) 100%);
+  background: radial-gradient(circle,#e597cb 0%, #d380b7 8%, #ec89cb 50%, rgba(254, 232, 255, 1) 82%, rgba(255, 255, 255, 1) 100%);
 }
 
 .icon-wrapper {

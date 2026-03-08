@@ -1,3 +1,5 @@
+
+
 .stack-cards {
   width: 98%;
   max-width: 1650px;
@@ -24,8 +26,8 @@
 
 .card-1 { background:#eedafa; }
 .card-2 { background:#D6EFFF; }
-.card-3 { background:#DFF5E3; }
-.card-4 { background:#FFF4CC; }
+.card-3 { background:#e5beff; }
+.card-4 { background:#ffdbef; }
 .card-5 { background:#E9D9FF; }
 
 /* number */
@@ -37,6 +39,37 @@
   font-size:42px;
   font-weight:700;
   opacity:.5;
+}
+
+.card-1 { 
+  color:#9830d5;
+  .card-title { color:#9830d5; }
+  .card-text { color:#9830d5; }
+  .btn { color: #9830d5;}
+}
+.card-2 { 
+  color:#2291d7;
+  .card-text { color:#2291d7; }
+  .card-title { color:#2291d7; }
+  .btn { color: #2291d7;}
+}
+.card-3 { 
+  color:#8f30ce;
+  .card-text { color:#8f30ce; }
+  .card-title { color:#8f30ce; }
+  .btn { color: #8f30ce;}
+}
+.card-4 { 
+  color:#c04789;
+  .card-text { color:#c04789; }
+  .card-title { color:#c04789; }
+  .btn { color: #c04789;}
+}
+.card-5 { 
+  color:#7f42d4;
+  .card-text { color:#7f42d4; }
+  .card-title { color:#7f42d4; }
+  .btn { color: #7f42d4;}
 }
 
 /* left side */
@@ -72,10 +105,13 @@
   padding:14px 24px;
   font-size:16px;
   border:none;
+  font-weight: 700;
+  font-size: smaller;
   border-radius:12px;
   cursor:pointer;
   background:white;
   transition:.25s;
+  border-radius: 25px;
 }
 
 .btn:hover{
