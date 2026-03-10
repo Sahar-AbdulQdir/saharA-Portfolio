@@ -110,31 +110,35 @@ export default function StackCards() {
   }, []);
 
   return (
-    <ul className="stack-cards" ref={containerRef}>
-      {cards.map((card, index) => (
-        <li className={`stack-card card-${index + 1}`} key={index}>
-          <div className="card-number">{card.number}</div>
+    <>
+      <h1 className="section-title">Services</h1>
+      
+      <ul className="stack-cards" ref={containerRef}>
+        {cards.map((card, index) => (
+          <li className={`stack-card card-${index + 1}`} key={index}>
+            <div className="card-number">{card.number}</div>
 
-          <div className="card-left">
-            <div>
-              <h2 className="card-title">{card.title}</h2>
-              <p className="card-text">{card.text}</p>
+            <div className="card-left">
+              <div>
+                <h2 className="card-title">{card.title}</h2>
+                <p className="card-text">{card.text}</p>
+              </div>
+
+              <div className="card-buttons">
+                {card.buttons.map((btn, i) => (
+                  <button key={i} className="btn">
+                    {btn}
+                  </button>
+                ))}
+              </div>
             </div>
 
-            <div className="card-buttons">
-              {card.buttons.map((btn, i) => (
-                <button key={i} className="btn">
-                  {btn}
-                </button>
-              ))}
+            <div className="card-image">
+              <img src={card.image} alt={card.title} />
             </div>
-          </div>
-
-          <div className="card-image">
-            <img src={card.image} alt={card.title} />
-          </div>
-        </li>
-      ))}
-    </ul>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }

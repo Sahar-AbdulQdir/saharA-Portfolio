@@ -160,7 +160,7 @@ function AppCard({ project }) {
         background: "#111", position: "relative",
       }}>
         <video src={project.video} autoPlay loop muted playsInline
-          style={{ width: "100%", height: "100%", objectFit: "cover", filter: hovered ? "brightness(1)" : "brightness(0.85)", transition: "filter 0.3s ease" }}
+          style={{ width: "100%", height: "100%", objectFit: "cover", transition: "filter 0.3s ease" }}
         />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg,rgba(255,255,255,0.12) 0%,transparent 55%)", pointerEvents: "none" }} />
       </div>
@@ -214,7 +214,7 @@ function WebCardFeatured({ project }) {
         position: "relative", background: "#111",
       }}>
         <video src={project.video} autoPlay loop muted playsInline
-          style={{ width: "100%", height: "100%", objectFit: "cover", filter: hovered ? "brightness(0.95)" : "brightness(0.78)", transition: "filter 0.35s ease" }}
+          style={{ width: "100%", height: "100%", objectFit: "cover", transition: "filter 0.35s ease" }}
         />
         <div style={{ position: "absolute", top: "12px", left: "12px", fontFamily: "'DM Mono',monospace", fontSize: "8.5px", letterSpacing: "0.13em", textTransform: "uppercase", color: "#fff", background: "rgba(0,0,0,0.4)", backdropFilter: "blur(8px)", padding: "3px 10px", borderRadius: "99px", border: "1px solid rgba(255,255,255,0.15)" }}>Website · Featured</div>
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "80px", background: "linear-gradient(to top,rgba(0,0,0,0.5),transparent)", pointerEvents: "none" }} />
@@ -250,7 +250,7 @@ function WebCardSmall({ project }) {
         position: "relative", background: "#111",
       }}>
         <video src={project.video} autoPlay loop muted playsInline
-          style={{ width: "100%", height: "100%", objectFit: "cover", filter: hovered ? "brightness(0.95)" : "brightness(0.75)", transition: "filter 0.35s ease" }}
+          style={{ width: "100%", height: "100%", objectFit: "cover", transition: "filter 0.35s ease" }}
         />
         <div style={{ position: "absolute", top: "9px", left: "9px", fontFamily: "'DM Mono',monospace", fontSize: "7.5px", letterSpacing: "0.12em", textTransform: "uppercase", color: "#fff", background: "rgba(0,0,0,0.4)", backdropFilter: "blur(8px)", padding: "2px 8px", borderRadius: "99px", border: "1px solid rgba(255,255,255,0.15)" }}>Website</div>
       </div>

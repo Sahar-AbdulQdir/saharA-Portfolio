@@ -41,7 +41,7 @@ const styles = `
   }
 
   .marqueeStar {
-    color: #C28EB2;
+    color: #E393D7ff;
     font-size: 16px;
     display: inline-block;
     animation: rotateStar 5s linear infinite;
@@ -59,14 +59,12 @@ const styles = `
 
   /* ── WRAPPER ───────────────────────────────────────── */
   .heroOuter {
-    // border-radius: 20px;
     overflow: hidden;
-    // box-shadow: 0 8px 50px rgba(124,58,237,0.18);
   }
 
   /* ── HERO ──────────────────────────────────────────── */
   .hero {
-    background-color: #F5F0FF;
+    background-color: #ffffff;
     min-height: 86vh;
     display: flex;
     align-items: center;
@@ -82,7 +80,7 @@ const styles = `
     content: '';
     position: absolute;
     width: 640px; height: 640px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(167,139,250,0.2) 0%, transparent 70%);
+    background: radial-gradient(circle, #fa94dc5f 0%, transparent 70%);
     top: -130px; right: -130px;
     animation: floatOrb 9s ease-in-out infinite;
     pointer-events: none;
@@ -91,7 +89,7 @@ const styles = `
     content: '';
     position: absolute;
     width: 460px; height: 460px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(189, 160, 239, 0.13) 0%, transparent 70%);
+    background: radial-gradient(circle, #fbbde859 0%, transparent 70%);
     bottom: -100px; left: -30px;
     animation: floatOrb 12s ease-in-out infinite reverse;
     pointer-events: none;
@@ -145,7 +143,7 @@ const styles = `
   }
 
   .roleDesigner {
-    background: #000000; color: #DFC9D5;
+    background: #000000; color: #ffffff;
     padding: 8px 18px; border-radius: 15px;
     font-size: 30px; font-family: 'Cormorant Garamond', serif;
     font-weight: 300; letter-spacing: 2px; text-transform: lowercase;
@@ -170,14 +168,6 @@ const styles = `
     animation: revealUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.1s forwards;
     position: relative;
   }
-  // .titleTop::after {
-  //   content: '';
-  //   position: absolute; bottom: 8px; left: 3rem;
-  //   width: 0; height: 4px;
-  //   background: linear-gradient(90deg,#7C3AED,#C4B5FD);
-  //   border-radius: 2px;
-  //   animation: lineGrow 1s cubic-bezier(0.22,1,0.36,1) 1s forwards;
-  // }
 
   @keyframes lineGrow {
     from { width: 0; opacity: 0; }
@@ -210,7 +200,7 @@ const styles = `
 
   .imageWrapper {
     border-radius: 30px; overflow: hidden;
-    box-shadow: 0 10px 30px #C28EB2;
+    box-shadow: 0 10px 30px #E393D7ff;
     opacity: 0;
     animation: revealScale 1s cubic-bezier(0.22,1,0.36,1) 0.4s forwards;
     position: relative;
@@ -219,9 +209,8 @@ const styles = `
   }
   .imageWrapper:hover {
     transform: scale(1.04) rotate(-1.5deg);
-    box-shadow: 0 24px 60px #C28EB2;
+    box-shadow: 0 24px 60px #E393D7ff;
   }
-  /* shimmer sweep */
   .imageWrapper::after {
     content: '';
     position: absolute; inset: 0;
@@ -242,10 +231,9 @@ const styles = `
 
   .image { width: 260px; height: 320px; object-fit: cover; border-radius: 40px; display: block; }
 
-  /* spinning rings */
   .imageRing {
     position: absolute; inset: -14px; border-radius: 46px;
-    border: 2px dashed #C28EB2;
+    border: 2px dashed #E393D7ff;
     animation: spinSlow 22s linear infinite;
     pointer-events: none;
   }
@@ -261,10 +249,9 @@ const styles = `
     to   { transform: rotate(360deg); }
   }
 
-  /* floating availability badge */
   .badge {
     position: absolute; top: -40px; right: -36px;
-    background: #C28EB2; color: #fff;
+    background: #E393D7ff; color: #fff;
     font-family: 'Cormorant Garamond', serif;
     font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
     padding: 6px 14px; border-radius: 30px;
@@ -298,30 +285,17 @@ const styles = `
   }
 
   .portfolioText {
-    color: #0E1F4B; font-weight: 600; letter-spacing: 2px;
+    color: #F568CBff; font-weight: 600; letter-spacing: 2px;
     text-decoration: underline; text-transform: uppercase;
     font-family: 'Cormorant Garamond', serif; font-size: 14px;
     transition: letter-spacing 0.4s ease, color 0.3s ease;
   }
 
   .arrow {
-    font-size: 32px; color: #0E1F4B;
+    font-size: 32px; color: #F568CBff;
     transform: rotate(35deg);
     transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), color 0.3s ease;
     display: inline-block;
-  }
-
-  /* ── PROGRESS LINE ─────────────────────────────────── */
-  .progressBar {
-    position: absolute; bottom: 0; left: 0;
-    height: 3px; width: 0;
-    background: linear-gradient(90deg, #7C3AED, #C4B5FD);
-    border-radius: 0 2px 2px 0;
-    animation: progressLoad 2.5s cubic-bezier(0.22,1,0.36,1) 0.2s forwards;
-  }
-  @keyframes progressLoad {
-    from { width: 0; opacity: 0.4; }
-    to   { width: 100%; opacity: 1; }
   }
 
   /* ── CUSTOM CURSOR ─────────────────────────────────── */
@@ -340,6 +314,148 @@ const styles = `
     position: fixed; pointer-events: none; z-index: 9998;
     transform: translate(-50%,-50%);
     transition: left 0.16s ease, top 0.16s ease;
+  }
+
+  /* ── RESPONSIVE ────────────────────────────────────── */
+
+  /* Tablet: 768px – 1023px */
+  @media (max-width: 1023px) {
+    .hero {
+      padding: 40px 30px;
+      min-height: auto;
+      padding-bottom: 80px;
+    }
+
+    .hero::before { width: 400px; height: 400px; }
+    .hero::after  { width: 300px; height: 300px; }
+
+    .titleTop {
+      font-size: 80px;
+      margin-left: 1.5rem;
+    }
+
+    .titleBottom {
+      font-size: 86px;
+      margin-top: -10rem;
+    }
+
+    .image { width: 200px; height: 250px; }
+
+    .roleWrapper {
+      top: 1.5rem; right: 2rem;
+    }
+    .roleVisual  { font-size: 22px; }
+    .roleDesigner { font-size: 22px; }
+
+    .portfolioWrapper {
+      left: 30px;
+    }
+  }
+
+  /* Mobile: up to 767px */
+  @media (max-width: 767px) {
+    .marqueeItem {
+      font-size: 12px;
+      letter-spacing: 2px;
+      padding: 0 16px;
+    }
+
+    .hero {
+      padding: 24px 20px 100px;
+      min-height: auto;
+      align-items: flex-start;
+    }
+
+    .hero::before { width: 280px; height: 280px; top: -60px; right: -60px; }
+    .hero::after  { width: 220px; height: 220px; }
+
+    .container { padding-top: 1rem; }
+
+    /* Role tags: move inline below name */
+    .roleWrapper {
+      position: static;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 16px;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease 1.3s forwards;
+    }
+
+    .roleVisual {
+      font-size: 18px;
+      padding: 6px 14px;
+      transform: none !important;
+      align-self: auto;
+    }
+    .roleVisual:hover { transform: scale(1.05) !important; }
+
+    .roleDesigner {
+      font-size: 18px;
+      padding: 6px 14px;
+      transform: none !important;
+      margin-top: 0;
+    }
+    .roleDesigner:hover { transform: scale(1.05) !important; }
+
+    .content { margin-top: 20px; text-align: center; }
+
+    .titleTop {
+      font-size: 52px;
+      margin-left: 0;
+      text-align: center;
+    }
+
+    .middleRow {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .titleBottom {
+      font-size: 56px;
+      margin-top: 0;
+    }
+
+    .titleBottom.im {
+      order: 1;
+      align-self: center;
+    }
+
+    .imageContainer {
+      order: 2;
+    }
+
+    .titleBottom.name {
+      order: 3;
+      align-self: center;
+    }
+
+    .image { width: 180px; height: 220px; }
+
+    .badge {
+      top: -32px; right: -20px;
+      font-size: 10px;
+      padding: 5px 10px;
+    }
+
+    .portfolioWrapper {
+      position: static;
+      justify-content: center;
+      margin-top: 40px;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease 1.5s forwards;
+    }
+
+    .cursorDot, .cursorRing { display: none; }
+  }
+
+  /* Small mobile: up to 479px */
+  @media (max-width: 479px) {
+    .titleTop  { font-size: 42px; }
+    .titleBottom { font-size: 46px; }
+    .image { width: 150px; height: 185px; }
+    .roleVisual, .roleDesigner { font-size: 15px; padding: 5px 11px; }
   }
 `;
 
@@ -420,7 +536,6 @@ export default function Hero() {
               <span className="arrow">↓</span>
             </div>
 
-            {/* <div className="progressBar" /> */}
           </div>
         </section>
       </div>

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import  "../App.css";
 
 const SEGMENTS = [
   { text: "I'm a passionate ", type: "normal" },
@@ -114,6 +115,7 @@ export default function AboutMe() {
 
         .ab-root {
           min-height: 100vh;
+          // 
           // background: #f0ebff;
           display: flex; align-items: center; justify-content: center;
           padding: 80px 40px;
@@ -139,7 +141,7 @@ export default function AboutMe() {
           border-radius: 50%;
           filter: blur(100px);
           pointer-events: none;
-          background: radial-gradient(circle, #a78bfa73 0%, #c4b5fd33 40%, transparent 70%);
+          background: radial-gradient(circle, rgba(110, 160, 234, 0.47) 0%, rgba(110, 160, 234, 0.24) 40%, transparent 70%);
           transform: translate(-50%, -50%);
           transition: left 0.08s linear, top 0.08s linear;
           mix-blend-mode: multiply;
@@ -161,7 +163,7 @@ export default function AboutMe() {
         /* Label */
         .ab-label {
           font-size: 10.5px; letter-spacing: 0.28em; text-transform: uppercase;
-          color: #0E1F2F; margin-bottom: 22px;
+          color: #0E1F4Bff; margin-bottom: 22px;
           opacity: 0; transition: opacity 0.7s ease 0.3s;
         }
         .ab-content.in .ab-label { opacity: 1; }
@@ -171,16 +173,16 @@ export default function AboutMe() {
           font-family: 'Playfair Display', serif;
           font-size: clamp(38px, 6.5vw, 60px);
           font-weight: 400; 
-          color: #be569f;
+          color: #000000;
           margin-bottom: 12px; min-height: 1.2em;
         }
         .ab-heading .line2 {
-          font-style: italic; color: #ec79db;
+          font-style: italic; color: #837ef5;
         }
 
         .h-cursor {
           display: inline-block; width: 3px; height: 0.8em;
-          background: #ed3ac0; margin-left: 4px; vertical-align: middle;
+          background: rgb(0, 0, 0); margin-left: 4px; vertical-align: middle;
           border-radius: 2px; animation: blink 0.85s step-end infinite;
         }
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
@@ -188,7 +190,7 @@ export default function AboutMe() {
         /* Divider */
         .ab-divider {
           width: 0; height: 1.5px;
-          background: linear-gradient(90deg, #e73aed, #c4b5fd 50%, transparent);
+          background: linear-gradient(90deg, #6E9FEAff, rgb(140, 178, 235) 50%, transparent);
           border-radius: 2px; margin: 32px 0;
           transition: width 1.2s cubic-bezier(0.23,1,0.32,1) 0.4s;
         }
@@ -197,7 +199,7 @@ export default function AboutMe() {
         /* Paragraph */
         .ab-para {
           font-size: clamp(16px, 2.1vw, 18.5px);
-          line-height: 1.95; color: #ae2891; font-weight: 300;
+          line-height: 1.95; color: rgb(0, 0, 0); font-weight: 300;
           min-height: 8em;
         }
 
@@ -212,24 +214,24 @@ export default function AboutMe() {
         }
         .w.show { opacity: 1; transform: translateY(0); }
 
-        .w.highlight { color: #a01f84; font-weight: 400; }
-        .w.purple    { color: #7a1664; font-weight: 400; }
+        .w.highlight { color: #837ef5; font-weight: 400; }
+        .w.purple    { color: #8580ee; font-weight: 400; }
         .w.italic-glow {
           font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.07em;
-          background: linear-gradient(120deg, #ae2891, #b14299, #931c79);
+          background: linear-gradient(120deg, #6c66e0, #7f7add, #aba8ea);
           -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
 
         /* Word hover */
         .w.show:not(.italic-glow):hover {
-          color: #4c1d95 !important;
+          color: #837ef5 !important;
           text-shadow: 0 0 20px rgba(109,40,217,0.5), 0 0 50px rgba(167,139,250,0.25);
           letter-spacing: 0.04em;
           transform: translateY(-3px) scale(1.08);
           -webkit-text-fill-color: unset;
         }
         .w.near {
-          color: #6d28d9 !important;
+          color: #9b96f4 !important;
           text-shadow: 0 0 12px rgba(124,58,237,0.3);
           transform: translateY(-1px);
           -webkit-text-fill-color: unset;
@@ -238,7 +240,7 @@ export default function AboutMe() {
         /* Typing cursor */
         .p-cursor {
           display: inline-block; width: 2px; height: 0.9em;
-          background: #7c3aed; margin-left: 2px; vertical-align: middle;
+          background: #88b1ef; margin-left: 2px; vertical-align: middle;
           border-radius: 1px; animation: blink 0.7s step-end infinite;
         }
 
@@ -251,7 +253,7 @@ export default function AboutMe() {
 
         .ab-dot {
           width: 7px; height: 7px; border-radius: 50%;
-          background: #C28EB2; flex-shrink: 0;
+          background: #6E9FEAff; flex-shrink: 0;
           animation: pulse 2.4s ease-in-out infinite;
         }
         @keyframes pulse {

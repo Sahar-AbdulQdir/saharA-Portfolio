@@ -51,7 +51,7 @@ const styles = `
 
   /* NAV */
   .lm-nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:center; padding:20px 60px; transition:all .4s; pointer-events:none; }
-  .lm-nav.scrolled { background:rgba(245,243,255,.92); backdrop-filter:blur(16px); border-bottom:1px solid var(--border); padding:14px 60px; pointer-events:all; justify-content:space-between; }
+  .lm-nav.scrolled { background:rgba(245,243,255,.92); backdrop-filter:blur(16px); border-bottom:1px solid var(--border); padding:14px 60px; pointer-events:all;  }
   .lm-nav-logo { display:flex; align-items:center; gap:10px; text-decoration:none; opacity:0; transition:opacity .3s; }
   .lm-nav.scrolled .lm-nav-logo { opacity:1; }
   .lm-nav-logo-icon { width:32px; height:32px; border-radius:8px; background:var(--grad); display:flex; align-items:center; justify-content:center; }
@@ -59,6 +59,7 @@ const styles = `
   .lm-nav-links { display:flex; gap:28px; list-style:none; }
   .lm-nav-links a { font-size:.75rem; font-weight:500; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); text-decoration:none; transition:color .2s; }
   .lm-nav-links a:hover { color:var(--violet); }
+  .lm-nav-links li:last-child  { margin-right:-15rem; background:#000; color:#fff; border-radius:6px; padding:6px 12px; }
 
   /* HERO */
   .lm-hero { min-height:100vh; display:grid; grid-template-columns:1fr 1fr; padding:0 80px 0 100px; align-items:center; gap:60px; position:relative; overflow:hidden; }
@@ -285,6 +286,38 @@ const styles = `
     max-height:420px;
   }
 
+}
+
+/* VIDEO */
+.lm-video-section { background: white; padding: 100px 80px; }
+.lm-video-wrapper {
+  margin-top: 56px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1.5px solid var(--border);
+  box-shadow: 0 40px 80px rgba(124,58,237,.13), 0 8px 24px rgba(124,58,237,.07);
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--ink);
+}
+.lm-video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+.lm-video-caption {
+  margin-top: 20px;
+  text-align: center;
+  font-size: .8rem;
+  font-weight: 400;
+  color: var(--ink-muted);
+  letter-spacing: .03em;
+}
+@media(max-width:900px){
+  .lm-video-section { padding: 70px 24px; }
 }
   /* INSIGHTS */
   .lm-insights-section { background:var(--ink); padding:100px 80px; }
@@ -611,6 +644,7 @@ export default function LexiaMinds() {
             <li><a href="#wireframes">Process</a></li>
             <li><a href="#features">Features</a></li>
             <li><a href="#outcome">Outcome</a></li>
+            <li><a href="#video">Video</a></li>
           </ul>
         </nav>
 
@@ -930,6 +964,24 @@ export default function LexiaMinds() {
 
     </section>
 
+{/* Project Video */}
+<section className="lm-video-section" id="video">
+  <div className="lm-reveal">
+    <div className="lm-eyebrow">Project Walkthrough</div>
+    <h2 className="lm-sec-title">See it <em>in action</em></h2>
+  </div>
+  <div className="lm-video-wrapper lm-reveal-s">
+    <iframe
+      src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+      title="Lexia Minds — Project Walkthrough"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowFullScreen
+    />
+  </div>
+  <p className="lm-video-caption">
+    A full walkthrough of the Lexia Minds platform — features, design decisions, and live interactions.
+  </p>
+</section>
         {/* Insights / Challenges */}
         {/* <section className="lm-insights-section">
           <div className="lm-reveal">

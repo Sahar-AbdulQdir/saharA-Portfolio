@@ -4,17 +4,20 @@
   justify-content: center;
   align-items: flex-start;
   padding: 40px;
-  background: linear-gradient(180deg,rgba(254, 232, 255, 1) 0%, rgba(223, 201, 213, 1) 20%, rgba(194, 142, 178, 1) 40%, rgba(156, 175, 204, 1) 60%, rgb(96, 139, 183) 80%, rgb(101, 175, 224) 100%);
-  /* background: #ffffff; */
+  background: linear-gradient(180deg,#f5d0ec 0%, #cce5ff 25%, #f7c8f0 50%, #e3fbff 75%, #a8f7f7 100%);
+  /* background: #000000; */
 }
 
+body{
+  background-color: #ffffff;
+}
 .content-container {
   background-color: #ffffff;
   /* max-width: 1000px; */
   width: 100%;
   /* padding: 20px; */
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.372);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.372);
 }
 
 h1, h2 {
@@ -29,4 +32,37 @@ p, li {
 ul {
   list-style-type: disc;
   padding-left: 20px;
+}
+
+:root {
+  /* CSS HEX */
+--frosted-blue: #B8E7F3ff;
+--bubblegum-fizz: #F568CBff;
+--prussian-blue: #0E1F4Bff;
+--cornflower-blue: #6E9FEAff;
+--plum: #E393D7ff;
+--neon-ice: #59E7E7ff;
+}
+
+/* Scrollbar width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Scrollbar track (background) */
+::-webkit-scrollbar-track {
+    background: linear-gradient(180deg,#f5d0ec 0%, #cce5ff 25%, #f7c8f0 50%, #e3fbff 75%, #a8f7f7 100%);
+
+}
+
+/* Scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: white;
+  /* background: linear-gradient(180deg,#f5d0ec 0%, #cce5ff 25%, #f7c8f0 50%, #e3fbff 75%, #a8f7f7 100%); */
+  border-radius: 10px;
+}
+
+/* Hover effect */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--plum);
 }

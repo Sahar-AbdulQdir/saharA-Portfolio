@@ -119,7 +119,7 @@ function SkillButton({ skill, rand, progress }) {
         style={{
           position: "relative", zIndex: 1,
           padding: "10px 20px",
-          border: `2px solid ${hovered ? skill.color : "#000000be"}`,
+          border: `2px solid ${hovered ? skill.color : "rgb(174, 201, 243)"}`,
           borderRadius: "999px",
           background: hovered ? `${skill.color}18` : "rgba(255,255,255,0.9)",
           color: hovered ? skill.color : "#444",
@@ -189,7 +189,8 @@ export default function Skills() {
           padding: 10px 5px;
           position: relative;
           overflow: hidden;
-          background: #ffffff;
+          // 
+          // background: #ffffff;
         }
         .bg-grid {
           position: absolute; inset: 0;
@@ -218,7 +219,7 @@ export default function Skills() {
           position: relative; z-index: 2;
         }
         .section-title span {
-          background: linear-gradient(135deg, #ae5cf6, #ca3bf6, #e095fc);
+          background: linear-gradient(135deg, #6E9FEAff, #98bff9, #bcd3f8);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -238,7 +239,8 @@ export default function Skills() {
           text-align: center;
           position: relative; z-index: 2;
         }
-        .spacer { height: 15vh; background: #ffffff; }
+        .spacer { height: 15vh; 
+        background: #ffffff; }
       `}</style>
 
       <div className="spacer" />
