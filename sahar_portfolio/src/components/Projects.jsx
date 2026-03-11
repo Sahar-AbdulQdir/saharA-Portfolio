@@ -1,18 +1,17 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
-// import Project1 from "../pages/Project1";
+import { FaExternalLinkAlt } from "react-icons/fa"; // if using react-icons
 
 
 const apps = [
   {
-    id: 1, type: "app", name: "BSU app", subtitle: "Task Management App", date: "Aug 2025",
+    id: 1, type: "app", name: "BSU app  ", subtitle: "Task Management App", date: "Aug 2025",
     video: "./bsuV2.mp4",
     details: "Cross-platform mobile app for team task management with offline mode, push notifications, and AI-assisted scheduling.",
     tech: ["React Native", "Firebase", "OpenAI"], accent: "#f97316",
   },
   {
-    id: 2, type: "app", name: "Charity", subtitle: "Voice Platform App", date: "Nov 2025",
+    id: 2, type: "app", name: "Charity  ", subtitle: "Voice Platform App", date: "Nov 2025",
     video: "./smV.mp4",
     details: "Voice-enabled app with real-time transcription, speaker detection, and multilingual support for 40+ languages.",
     tech: ["Swift", "Whisper AI", "WebRTC"], accent: "#8b5cf6",
@@ -21,22 +20,22 @@ const apps = [
 
 const websites = [
   {
-    id: 3, type: "web", name: "Lexia Minds", subtitle: "Analytics Dashboard", date: "Jan 2025",
+    id: 3, type: "web", name: "Lexia Minds  ", subtitle: "Analytics Dashboard", date: "Jan 2025",
     video: "./lexV.mp4",
     details: "Real-time analytics dashboard with live data streaming, customizable widgets, and full dark mode support.",
     tech: ["React", "D3.js", "WebSocket"], accent: "#0ea5e9",
   },
   {
-    id: 4, type: "web", name: "CreativePulse", subtitle: "E-Commerce Platform", date: "Mar 2025",
+    id: 4, type: "web", name: "CreativePulse  ", subtitle: "E-Commerce Platform", date: "Mar 2025",
     video: "./creatV.mp4",
     details: "Headless e-commerce with dynamic product pages, Stripe integration, and a CMS-powered editorial layer.",
-    tech: ["Next.js", "Stripe", "Sanity"], accent: "#10b981",
+    tech: ["Next.js", "Stripe", "Sanity"], accent: "#10b981", route: "/CreativePulse_project",
   },
   {
-    id: 5, type: "web", name: "Sign Language system", subtitle: "Design System Site", date: "Jun 2025",
+    id: 5, type: "web", name: "Sign Language system  ", subtitle: "Design System Site", date: "Jun 2025",
     video: "./signV.mp4",
     details: "Documentation site for an 80+ component design system with Figma token sync and typed TypeScript APIs.",
-    tech: ["TypeScript", "Storybook", "Figma"], accent: "#ec4899",
+    tech: ["TypeScript", "Storybook", "Figma"], accent: "#ec4899", route: "/ASL_project",
   },
 ];
 
@@ -168,7 +167,6 @@ function AppCard({ project }) {
       <div style={{ flex: 1, minWidth: 0 }}>
         <div style={{ display: "inline-block", fontFamily: "'DM Mono',monospace", fontSize: "8px", letterSpacing: "0.13em", textTransform: "uppercase", color: project.accent, background: `${project.accent}12`, border: `1px solid ${project.accent}22`, padding: "2px 8px", borderRadius: "99px", marginBottom: "6px" }}>App</div>
 <button
-  onClick={() => navigate("/Project1")}
   style={{
     fontFamily: "'Fraunces',serif",
     fontWeight: "700",
@@ -182,6 +180,9 @@ function AppCard({ project }) {
   }}
 >
   {project.name}
+  <a href={project.url} target="_blank" rel="noopener noreferrer" style={{ color: "#111827"}}>
+        <FaExternalLinkAlt size={14} />
+      </a>
 </button>        <div style={{ fontFamily: "'DM Mono',monospace", fontSize: "10px", color: "#9ca3af", marginBottom: "6px" }}>{project.subtitle}</div>
         <div style={{ fontFamily: "'DM Mono',monospace", fontSize: "9.5px", color: "#d1d5db", letterSpacing: "0.04em" }}>{project.date}</div>
       </div>
@@ -199,6 +200,7 @@ function AppCard({ project }) {
 function WebCardFeatured({ project }) {
   const [hovered, setHovered] = useState(false);
   const { isMobile, isTablet } = useBreakpoint();
+  const navigate = useNavigate(); 
   const height = isMobile ? "180px" : isTablet ? "200px" : "230px";
 
   return (
@@ -222,7 +224,26 @@ function WebCardFeatured({ project }) {
 
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginTop: "13px", paddingLeft: "2px", paddingRight: "2px" }}>
         <div>
-          <button style={{ fontFamily: "'Fraunces',serif", fontWeight: "700", fontSize: "21px", color: "#111827", letterSpacing: "-0.02em", lineHeight: 1.05, background: "none", border: "none" }}>{project.name}</button>
+<button
+  onClick={() => navigate("/LexiaMinds_project")}
+  style={{
+    fontFamily: " serif",
+    fontWeight: "600",
+    fontSize: "21px",
+    color: "#000000",
+    letterSpacing: "-0.02em",
+    lineHeight: 1.05,
+    // borderRadius:"10px",
+    border: "none",
+    background: "none",
+    // padding: "4px 12px",
+    // background: "rgb(207, 226, 255)"
+  }}
+>
+  {project.name}<a href={project.url} target="_blank" rel="noopener noreferrer" style={{ color: "#111827"}}>
+        <FaExternalLinkAlt size={14} />
+      </a>
+</button>
           <div style={{ fontFamily: "'DM Mono',monospace", fontSize: "10px", color: "#9ca3af", marginTop: "3px" }}>{project.subtitle}</div>
         </div>
         <span style={{ fontFamily: "'DM Mono',monospace", fontSize: "10px", color: "#d1d5db", letterSpacing: "0.04em", flexShrink: 0, marginLeft: "12px", paddingBottom: "2px" }}>{project.date}</span>
@@ -236,6 +257,8 @@ function WebCardFeatured({ project }) {
 function WebCardSmall({ project }) {
   const [hovered, setHovered] = useState(false);
   const { isMobile } = useBreakpoint();
+  const navigate = useNavigate();
+
 
   return (
     <div onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} style={{ position: "relative", cursor: "pointer" }}>
@@ -257,7 +280,12 @@ function WebCardSmall({ project }) {
 
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginTop: "11px", paddingLeft: "2px", paddingRight: "2px" }}>
         <div>
-          <button style={{ fontFamily: "'Fraunces',serif", fontWeight: "700", fontSize: "16px", color: "#111827", letterSpacing: "-0.02em", lineHeight: 1.1, background: "none", border: "none" }}>{project.name}</button>
+          <button
+          onClick={() => navigate(project.route)}
+           style={{ fontFamily: "'Fraunces',serif", fontWeight: "700", fontSize: "16px", color: "#000000", letterSpacing: "-0.02em", lineHeight: 1.1, background: "none", border: "none" }}>{project.name}</button>
+          <a href={project.url} target="_blank" rel="noopener noreferrer" style={{ color: "#271111"}}>
+        <FaExternalLinkAlt size={14} />
+      </a>
           <div style={{ fontFamily: "'DM Mono',monospace", fontSize: "9.5px", color: "#9ca3af", marginTop: "2px" }}>{project.subtitle}</div>
         </div>
         <span style={{ fontFamily: "'DM Mono',monospace", fontSize: "9.5px", color: "#d1d5db", letterSpacing: "0.04em", flexShrink: 0, marginLeft: "8px" }}>{project.date}</span>

@@ -1,12 +1,13 @@
 
-.service-title{
+/* .service-title{
   font-size:2em;
   color: gray;
   font-weight:700;
   text-align:center;
   margin-bottom:60px;
-}
-.stack-cards {
+}*/ 
+
+.stack-cards { 
   width: 98%;
   max-width: 1650px;
   margin: auto;

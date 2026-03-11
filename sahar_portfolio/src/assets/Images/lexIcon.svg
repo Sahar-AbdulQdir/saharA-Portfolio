@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+<path d="M0 0 C0.495 1.485 0.495 1.485 1 3 C1.763125 3.2475 2.52625 3.495 3.3125 3.75 C7.13189995 5.52646509 8.49494609 8.23392903 10 12 C10.9756392 15.30216346 11.84329261 18.55243748 12 22 C11.34 22.99 10.68 23.98 10 25 C9.896875 26.0725 9.79375 27.145 9.6875 28.25 C8.65455639 33.88423787 6.01028384 37.40208208 1.5625 40.9375 C-1.51140774 42.21204711 -3.70253357 42.36638516 -7 42 C-7.66 41.34 -8.32 40.68 -9 40 C-9.37125 40.969375 -9.7425 41.93875 -10.125 42.9375 C-12 46 -12 46 -14.6875 47.1875 C-19.44712261 46.9180874 -22.430016 45.09145423 -26 42 C-29.41130848 37.89308951 -30.22956951 34.28009882 -30 29 C-30.391875 28.236875 -30.78375 27.47375 -31.1875 26.6875 C-32.49030169 22.37823286 -30.66703407 19.03635058 -29 15 C-28.54625 13.845 -28.0925 12.69 -27.625 11.5 C-26 9 -26 9 -23.4375 8.375 C-22.633125 8.25125 -21.82875 8.1275 -21 8 C-19.63979849 6.03241727 -19.63979849 6.03241727 -19 4 C-16.125 3.875 -16.125 3.875 -13 4 C-12.34 4.66 -11.68 5.32 -11 6 C-10.54625 5.030625 -10.0925 4.06125 -9.625 3.0625 C-6.98485481 -1.91315824 -5.12905952 -1.00351164 0 0 Z M4 14 C5 16 5 16 5 16 Z M-25 19 C-24 21 -24 21 -24 21 Z M-22 36 C-21 38 -21 38 -21 38 Z " fill="#B290FE" transform="translate(34,1)"/>
+<path d="M0 0 C1.36125 0.37125 1.36125 0.37125 2.75 0.75 C3.08 1.74 3.41 2.73 3.75 3.75 C4.513125 3.9975 5.27625 4.245 6.0625 4.5 C9.88189995 6.27646509 11.24494609 8.98392903 12.75 12.75 C13.7256392 16.05216346 14.59329261 19.30243748 14.75 22.75 C14.09 23.74 13.43 24.73 12.75 25.75 C12.646875 26.8225 12.54375 27.895 12.4375 29 C11.40455639 34.63423787 8.76028384 38.15208208 4.3125 41.6875 C1.17491578 42.98844956 -0.88780231 43.26163878 -4.25 42.75 C-6.90246562 40.28915141 -7.24683878 38.77819311 -7.65405273 35.14648438 C-7.68050974 33.71244982 -7.68934273 32.27801707 -7.68359375 30.84375 C-7.6888356 30.08203491 -7.69407745 29.32031982 -7.69947815 28.53552246 C-7.70588846 26.92847917 -7.70457414 25.32138891 -7.69604492 23.71435547 C-7.68752753 21.25793898 -7.71631764 18.80384353 -7.74804688 16.34765625 C-7.7496589 14.78385486 -7.74908134 13.22004937 -7.74609375 11.65625 C-7.75732773 10.92386108 -7.76856171 10.19147217 -7.78013611 9.43688965 C-7.73305673 5.98652488 -7.47680666 4.06141612 -5.42211914 1.24023438 C-3.25 -0.25 -3.25 -0.25 0 0 Z M6.75 14.75 C7.75 16.75 7.75 16.75 7.75 16.75 Z " fill="#FEACE4" transform="translate(31.25,0.25)"/>
+<path d="M0 0 C1.98 0 3.96 0 6 0 C6 0.33 6 0.66 6 1 C4.02 1 2.04 1 0 1 C0 0.67 0 0.34 0 0 Z " fill="#B491FE" transform="translate(15,3)"/>
+<path d="M0 0 C1.65 0 3.3 0 5 0 C5 0.33 5 0.66 5 1 C3.35 1 1.7 1 0 1 C0 0.67 0 0.34 0 0 Z " fill="#FEACE5" transform="translate(27,44)"/>
+<path d="M0 0 C0.33 0 0.66 0 1 0 C1 1.65 1 3.3 1 5 C0.67 5 0.34 5 0 5 C0 3.35 0 1.7 0 0 Z " fill="#B491FF" transform="translate(2,18)"/>
+<path d="M0 0 C1 4 1 4 1 4 Z " fill="#FEACE4" transform="translate(45,14)"/>
+<path d="M0 0 C0.66 0.66 1.32 1.32 2 2 C1.34 2 0.68 2 0 2 C0 1.34 0 0.68 0 0 Z " fill="#DA9EF0" transform="translate(25,42)"/>
+<path d="" fill="#B491FE" transform="translate(0,0)"/>
+<path d="" fill="#FFACE4" transform="translate(0,0)"/>
+<path d="" fill="#B491FF" transform="translate(0,0)"/>
+<path d="" fill="#FEACE4" transform="translate(0,0)"/>
+<path d="M0 0 C0.66 0 1.32 0 2 0 C1.67 0.66 1.34 1.32 1 2 C0.67 1.34 0.34 0.68 0 0 Z " fill="#D99FF1" transform="translate(21,4)"/>
+<path d="" fill="#B591FE" transform="translate(0,0)"/>
+<path d="M0 0 C2 1 2 1 2 1 Z " fill="#FEADE5" transform="translate(34,42)"/>
+<path d="" fill="#B491FE" transform="translate(0,0)"/>
+<path d="M0 0 C2 1 2 1 2 1 Z " fill="#FFADE4" transform="translate(36,41)"/>
+<path d="" fill="#B491FE" transform="translate(0,0)"/>
+<path d="" fill="#FFADE3" transform="translate(0,0)"/>
+<path d="" fill="#FFACE4" transform="translate(0,0)"/>
+<path d="" fill="#FFACE5" transform="translate(0,0)"/>
+<path d="" fill="#B591FF" transform="translate(0,0)"/>
+<path d="" fill="#B591FF" transform="translate(0,0)"/>
+<path d="M0 0 C2 1 2 1 2 1 Z " fill="#B592FF" transform="translate(8,8)"/>
+<path d="M0 0 C2 1 2 1 2 1 Z " fill="#B492FF" transform="translate(10,7)"/>
+<path d="" fill="#FEACE3" transform="translate(0,0)"/>
+<path d="" fill="#B591FF" transform="translate(0,0)"/>
+<path d="" fill="#B592FF" transform="translate(0,0)"/>
+<path d="" fill="#B591FF" transform="translate(0,0)"/>
+<path d="" fill="#B491FF" transform="translate(0,0)"/>
+<path d="" fill="#B592FF" transform="translate(0,0)"/>
+<path d="" fill="#B591FF" transform="translate(0,0)"/>
+<path d="" fill="#FFADE4" transform="translate(0,0)"/>
+<path d="" fill="#B491FF" transform="translate(0,0)"/>
+<path d="" fill="#FFACE4" transform="translate(0,0)"/>
+<path d="" fill="#FFADE4" transform="translate(0,0)"/>
+<path d="" fill="#FFADE4" transform="translate(0,0)"/>
+<path d="" fill="#B491FF" transform="translate(0,0)"/>
+<path d="" fill="#B492FF" transform="translate(0,0)"/>
+<path d="" fill="#FFACE4" transform="translate(0,0)"/>
+<path d="" fill="#B592FF" transform="translate(0,0)"/>
+<path d="" fill="#B591FF" transform="translate(0,0)"/>
+<path d="" fill="#FFACE5" transform="translate(0,0)"/>
+<path d="" fill="#FFADE4" transform="translate(0,0)"/>
+<path d="" fill="#FFADE4" transform="translate(0,0)"/>
+<path d="" fill="#B591FF" transform="translate(0,0)"/>
+<path d="" fill="#FFACE4" transform="translate(0,0)"/>
+<path d="" fill="#FFADE4" transform="translate(0,0)"/>
+<path d="" fill="#B591FF" transform="translate(0,0)"/>
+<path d="" fill="#B491FF" transform="translate(0,0)"/>
+<path d="" fill="#FFACE4" transform="translate(0,0)"/>
+<path d="" fill="#B592FF" transform="translate(0,0)"/>
+<path d="" fill="#FFADE3" transform="translate(0,0)"/>
+<path d="" fill="#B591FE" transform="translate(0,0)"/>
+<path d="" fill="#FFADE4" transform="translate(0,0)"/>
+<path d="" fill="#B491FF" transform="translate(0,0)"/>
+<path d="" fill="#FFACE5" transform="translate(0,0)"/>
+<path d="" fill="#FFADE5" transform="translate(0,0)"/>
+<path d="" fill="#FEADE5" transform="translate(0,0)"/>
+<path d="" fill="#FEADE4" transform="translate(0,0)"/>
+<path d="" fill="#FFADE5" transform="translate(0,0)"/>
+<path d="" fill="#FFADE4" transform="translate(0,0)"/>
+</svg>

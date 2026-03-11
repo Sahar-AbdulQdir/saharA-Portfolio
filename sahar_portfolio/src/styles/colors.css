@@ -1,20 +1,34 @@
 :root {
+
+  /* CSS HEX */
+--frosted-blue: #B8E7F3ff;
+--bubblegum-fizz: #F568CBff;
+--prussian-blue: #0E1F4Bff;
+--cornflower-blue: #6E9FEAff;
+--plum: #E393D7ff;
+--neon-ice: #59E7E7ff;
+
+
+/*  */
+--wisteria: #D2ACE8ff;
+--pink-orchid: #EDB9DCff;
+--wisteria-2: #B5A6E9ff;
+--snow: #FEFCFEff;
+--frosted-blue: #C6F2FFff;
+--pink-orchid-2: #E4BCE4ff;
+--dark-amethyst: #2D1F4Aff;
+
+
   /* Primary Colors */
   --lilac: #BB94B5;
   --lilac-soft: #C28EB2;
-
-  /* Blues */
   --prussian-blue: #0E1F4B;
   --yale-blue: #26415C;
   --powder-blue: #9CAFCC;
-
-  /* Light Accent */
   --thistle: #DFC9D5;
-
-  /* Dark Base */
   --ink-black: #0E1F2F;
 
-  /* Gradients */
+  
   --gradient-main: linear-gradient(
     135deg,
     #BB94B5,
