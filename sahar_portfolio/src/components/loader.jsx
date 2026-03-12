@@ -262,7 +262,7 @@ const css = `
   .nwrap { position:relative; text-align:center; z-index:2; }
 
   .n {
-    font-family:sans-serif;
+    // font-family:sans-serif;
     font-weight: 800;
     font-size: clamp(4.5rem, 12vw, 8.5rem);
     letter-spacing: 0.18em;
@@ -306,7 +306,7 @@ const css = `
   }
 
   .nsub {
-    font-family:'Montserrat', sans-serif;
+    // font-family:'Montserrat', sans-serif;
     font-weight: 300;
     font-size: 0.72rem;
     letter-spacing: 0.5em;
@@ -332,7 +332,8 @@ const css = `
                 radial-gradient(ellipse at 80% 70%, rgba(245,104,203,0.12) 0%, transparent 55%);
   }
   .page h1 {
-    font-family:'Syne',sans-serif; font-weight:800;
+    // font-family:'Syne',sans-serif; 
+    font-weight:800;
     font-size:clamp(3.5rem,9vw,7rem);
     letter-spacing:0.18em; text-transform:uppercase;
     background: linear-gradient(135deg, #d6eff5, #c5ffff, #c8deff, #f5d2f0, #ffffff);
@@ -350,7 +351,8 @@ const css = `
     opacity:0; animation: pageIn 1.1s cubic-bezier(0.22,1,0.36,1) 0.4s both;
   }
   .page p {
-    font-family:'Montserrat',sans-serif; font-weight:300;
+    // font-family:'Montserrat',sans-serif; 
+    font-weight:300;
     font-size:0.7rem; letter-spacing:0.45em; text-transform:uppercase;
     color:#B8E7F3; margin-top:1rem;
     opacity:0; animation: pageIn 1.1s cubic-bezier(0.22,1,0.36,1) 0.65s both;

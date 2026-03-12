@@ -5,16 +5,18 @@ import { FaExternalLinkAlt } from "react-icons/fa"; // if using react-icons
 
 const apps = [
   {
-    id: 1, type: "app", name: "BSU app  ", subtitle: "Task Management App", date: "Aug 2025",
+    id: 1, type: "app", name: "Term Tracker  ", subtitle: "Task Management App", date: "Aug 2025",
     video: "./bsuV2.mp4",
     details: "Cross-platform mobile app for team task management with offline mode, push notifications, and AI-assisted scheduling.",
     tech: ["React Native", "Firebase", "OpenAI"], accent: "#f97316",
+    route: "/TermTracker",  // ← add this
   },
   {
-    id: 2, type: "app", name: "Charity  ", subtitle: "Voice Platform App", date: "Nov 2025",
+    id: 2, type: "app", name: "Hope  ", subtitle: "Voice Platform App", date: "Nov 2025",
     video: "./smV.mp4",
     details: "Voice-enabled app with real-time transcription, speaker detection, and multilingual support for 40+ languages.",
     tech: ["Swift", "Whisper AI", "WebRTC"], accent: "#8b5cf6",
+    route: "/Hope",  // ← add this
   },
 ];
 
@@ -101,11 +103,11 @@ function Tooltip({ project, visible, direction = "right", above = false }) {
         position: "relative",
       }}>
         <div style={arrowStyle} />
-        <p style={{ fontFamily: "'DM Mono',monospace", fontSize: "9px", letterSpacing: "0.14em", textTransform: "uppercase", color: project.accent, margin: "0 0 6px 0" }}>Details</p>
+        <p style={{ fontFamily: "'Playfair Display', serif", fontSize: "9px", letterSpacing: "0.14em", textTransform: "uppercase", color: project.accent, margin: "0 0 6px 0" }}>Details</p>
         <p style={{ fontFamily: "'Fraunces',serif", fontSize: "12px", lineHeight: "1.6", color: "#4b5563", margin: "0 0 10px 0" }}>{project.details}</p>
         <div style={{ display: "flex", gap: "5px", flexWrap: "wrap" }}>
           {project.tech.map(t => (
-            <span key={t} style={{ fontFamily: "'DM Mono',monospace", fontSize: "9px", padding: "2px 7px", borderRadius: "99px", background: `${project.accent}12`, color: project.accent, border: `1px solid ${project.accent}28`, letterSpacing: "0.04em" }}>{t}</span>
+            <span key={t} style={{ fontFamily: "'Playfair Display', serif", fontSize: "9px", padding: "2px 7px", borderRadius: "99px", background: `${project.accent}12`, color: project.accent, border: `1px solid ${project.accent}28`, letterSpacing: "0.04em" }}>{t}</span>
           ))}
         </div>
       </div>
@@ -117,9 +119,9 @@ function Tooltip({ project, visible, direction = "right", above = false }) {
 function SectionLabel({ label, count }) {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "18px" }}>
-      <span style={{ fontFamily: "'DM Mono',monospace", fontSize: "8.5px", letterSpacing: "0.18em", textTransform: "uppercase", color: "#c4bfb8" }}>{label}</span>
+      <span style={{ fontFamily: "'Playfair Display', serif", fontSize: "8.5px", letterSpacing: "0.18em", textTransform: "uppercase", color: "#c4bfb8" }}>{label}</span>
       <div style={{ flex: 1, height: "1px", background: "#ece9e3" }} />
-      <span style={{ fontFamily: "'DM Mono',monospace", fontSize: "8.5px", color: "#d6d0c8" }}>{count}</span>
+      <span style={{ fontFamily: "'Playfair Display', serif", fontSize: "8.5px", color: "#d6d0c8" }}>{count}</span>
     </div>
   );
 }
@@ -165,13 +167,14 @@ function AppCard({ project }) {
       </div>
 
       <div style={{ flex: 1, minWidth: 0 }}>
-        <div style={{ display: "inline-block", fontFamily: "'DM Mono',monospace", fontSize: "8px", letterSpacing: "0.13em", textTransform: "uppercase", color: project.accent, background: `${project.accent}12`, border: `1px solid ${project.accent}22`, padding: "2px 8px", borderRadius: "99px", marginBottom: "6px" }}>App</div>
+        <div style={{ display: "inline-block", fontFamily: "'Playfair Display', serif", fontSize: "8px", letterSpacing: "0.13em", textTransform: "uppercase", color: project.accent, background: `${project.accent}12`, border: `1px solid ${project.accent}22`, padding: "2px 8px", borderRadius: "99px", marginBottom: "6px" }}>App</div>
 <button
+  onClick={() => navigate(project.route)}  
   style={{
     fontFamily: "'Fraunces',serif",
-    fontWeight: "700",
+    fontWeight: "900",
     fontSize: isMobile ? "18px" : "22px",
-    color: "#111827",
+    color: "#000000",
     lineHeight: 1.05,
     letterSpacing: "-0.02em",
     marginBottom: "3px",
@@ -183,8 +186,10 @@ function AppCard({ project }) {
   <a href={project.url} target="_blank" rel="noopener noreferrer" style={{ color: "#111827"}}>
         <FaExternalLinkAlt size={14} />
       </a>
-</button>        <div style={{ fontFamily: "'DM Mono',monospace", fontSize: "10px", color: "#9ca3af", marginBottom: "6px" }}>{project.subtitle}</div>
-        <div style={{ fontFamily: "'DM Mono',monospace", fontSize: "9.5px", color: "#d1d5db", letterSpacing: "0.04em" }}>{project.date}</div>
+
+      
+</button>        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "10px", color: "#9ca3af", marginBottom: "6px" }}>{project.subtitle}</div>
+        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "9.5px", color: "#d1d5db", letterSpacing: "0.04em" }}>{project.date}</div>
       </div>
 
       <div style={{ width: "28px", height: "28px", borderRadius: "50%", background: hovered ? project.accent : "#f3f4f6", display: "flex", alignItems: "center", justifyContent: "center", transition: "all 0.25s ease", flexShrink: 0 }}>
@@ -218,7 +223,7 @@ function WebCardFeatured({ project }) {
         <video src={project.video} autoPlay loop muted playsInline
           style={{ width: "100%", height: "100%", objectFit: "cover", transition: "filter 0.35s ease" }}
         />
-        <div style={{ position: "absolute", top: "12px", left: "12px", fontFamily: "'DM Mono',monospace", fontSize: "8.5px", letterSpacing: "0.13em", textTransform: "uppercase", color: "#fff", background: "rgba(0,0,0,0.4)", backdropFilter: "blur(8px)", padding: "3px 10px", borderRadius: "99px", border: "1px solid rgba(255,255,255,0.15)" }}>Website · Featured</div>
+        <div style={{ position: "absolute", top: "12px", left: "12px", fontFamily: "'Playfair Display', serif", fontSize: "8.5px", letterSpacing: "0.13em", textTransform: "uppercase", color: "#fff", background: "rgba(0,0,0,0.4)", backdropFilter: "blur(8px)", padding: "3px 10px", borderRadius: "99px", border: "1px solid rgba(255,255,255,0.15)" }}>Website · Featured</div>
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "80px", background: "linear-gradient(to top,rgba(0,0,0,0.5),transparent)", pointerEvents: "none" }} />
       </div>
 
@@ -228,7 +233,7 @@ function WebCardFeatured({ project }) {
   onClick={() => navigate("/LexiaMinds_project")}
   style={{
     fontFamily: " serif",
-    fontWeight: "600",
+    fontWeight: "900",
     fontSize: "21px",
     color: "#000000",
     letterSpacing: "-0.02em",
@@ -244,9 +249,9 @@ function WebCardFeatured({ project }) {
         <FaExternalLinkAlt size={14} />
       </a>
 </button>
-          <div style={{ fontFamily: "'DM Mono',monospace", fontSize: "10px", color: "#9ca3af", marginTop: "3px" }}>{project.subtitle}</div>
+          <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "10px", color: "#9ca3af", marginTop: "3px" }}>{project.subtitle}</div>
         </div>
-        <span style={{ fontFamily: "'DM Mono',monospace", fontSize: "10px", color: "#d1d5db", letterSpacing: "0.04em", flexShrink: 0, marginLeft: "12px", paddingBottom: "2px" }}>{project.date}</span>
+        <span style={{ fontFamily: "'Playfair Display', serif", fontSize: "10px", color: "#d1d5db", letterSpacing: "0.04em", flexShrink: 0, marginLeft: "12px", paddingBottom: "2px" }}>{project.date}</span>
       </div>
       <div style={{ height: "2px", borderRadius: "99px", marginTop: "9px", background: project.accent, width: hovered ? "100%" : "0%", transition: "width 0.4s cubic-bezier(0.16,1,0.3,1)" }} />
     </div>
@@ -275,20 +280,20 @@ function WebCardSmall({ project }) {
         <video src={project.video} autoPlay loop muted playsInline
           style={{ width: "100%", height: "100%", objectFit: "cover", transition: "filter 0.35s ease" }}
         />
-        <div style={{ position: "absolute", top: "9px", left: "9px", fontFamily: "'DM Mono',monospace", fontSize: "7.5px", letterSpacing: "0.12em", textTransform: "uppercase", color: "#fff", background: "rgba(0,0,0,0.4)", backdropFilter: "blur(8px)", padding: "2px 8px", borderRadius: "99px", border: "1px solid rgba(255,255,255,0.15)" }}>Website</div>
+        <div style={{ position: "absolute", top: "9px", left: "9px", fontFamily: "'Playfair Display', serif", fontSize: "7.5px", letterSpacing: "0.12em", textTransform: "uppercase", color: "#fff", background: "rgba(0,0,0,0.4)", backdropFilter: "blur(8px)", padding: "2px 8px", borderRadius: "99px", border: "1px solid rgba(255,255,255,0.15)" }}>Website</div>
       </div>
 
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginTop: "11px", paddingLeft: "2px", paddingRight: "2px" }}>
         <div>
           <button
           onClick={() => navigate(project.route)}
-           style={{ fontFamily: "'Fraunces',serif", fontWeight: "700", fontSize: "16px", color: "#000000", letterSpacing: "-0.02em", lineHeight: 1.1, background: "none", border: "none" }}>{project.name}</button>
+           style={{ fontFamily: "'Fraunces',serif", fontWeight: "900", fontSize: "16px", color: "#000000", letterSpacing: "-0.02em", lineHeight: 1.1, background: "none", border: "none" }}>{project.name}</button>
           <a href={project.url} target="_blank" rel="noopener noreferrer" style={{ color: "#271111"}}>
         <FaExternalLinkAlt size={14} />
       </a>
-          <div style={{ fontFamily: "'DM Mono',monospace", fontSize: "9.5px", color: "#9ca3af", marginTop: "2px" }}>{project.subtitle}</div>
+          <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "9.5px", color: "#9ca3af", marginTop: "2px" }}>{project.subtitle}</div>
         </div>
-        <span style={{ fontFamily: "'DM Mono',monospace", fontSize: "9.5px", color: "#d1d5db", letterSpacing: "0.04em", flexShrink: 0, marginLeft: "8px" }}>{project.date}</span>
+        <span style={{ fontFamily: "'Playfair Display', serif", fontSize: "9.5px", color: "#d1d5db", letterSpacing: "0.04em", flexShrink: 0, marginLeft: "8px" }}>{project.date}</span>
       </div>
       <div style={{ height: "1.5px", borderRadius: "99px", marginTop: "8px", background: project.accent, width: hovered ? "100%" : "0%", transition: "width 0.4s cubic-bezier(0.16,1,0.3,1)" }} />
     </div>
@@ -310,17 +315,17 @@ export default function ProjectCards() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Mono:wght@300;400;500&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background: #f7f5f0; }
+        body { background: #2c0703; }
       `}</style>
 
       <div style={{ minHeight: "100vh", background: "#ffffff", marginTop: "20rem", padding: isMobile ? "36px 20px 60px" : isTablet ? "48px 32px 72px" : "56px 44px 80px" }}>
 
         {/* Header */}
         <div style={{ marginBottom: isMobile ? "36px" : "52px" }}>
-          <p style={{ fontFamily: "'DM Mono',monospace", fontSize: "9.5px", letterSpacing: "0.2em", textTransform: "uppercase", color: "#b5b0a6", marginBottom: "12px" }}>Portfolio · 2025</p>
+          <p style={{ fontFamily: "'Playfair Display', serif", fontSize: "9.5px", letterSpacing: "0.2em", textTransform: "uppercase", color: "#b5b0a6", marginBottom: "12px" }}>Portfolio · 2025</p>
           <div style={{ display: "flex", alignItems: "baseline", gap: "14px" }}>
-            <h1 style={{ fontFamily: "'Fraunces',serif", fontWeight: "700", fontSize: isMobile ? "32px" : isTablet ? "42px" : "clamp(34px,4.5vw,52px)", color: "#111827", lineHeight: 1.05, letterSpacing: "-0.03em" }}>Selected Projects</h1>
-            <span style={{ fontFamily: "'DM Mono',monospace", fontSize: "11px", color: "#c4bfb8", letterSpacing: "0.06em" }}>05</span>
+            <h1 style={{ fontFamily: "'Fraunces',serif", fontWeight: "900", fontSize: isMobile ? "32px" : isTablet ? "42px" : "clamp(34px,4.5vw,52px)", color: "#111827", lineHeight: 1.05, letterSpacing: "-0.03em" }}>Selected Projects</h1>
+            <span style={{ fontFamily: "'Playfair Display', serif", fontSize: "11px", color: "#c4bfb8", letterSpacing: "0.06em" }}>05</span>
           </div>
         </div>
 

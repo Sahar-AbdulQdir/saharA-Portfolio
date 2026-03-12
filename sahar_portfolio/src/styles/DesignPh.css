@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+  font-family: 'Playfair Display', serif;
   padding: 60px 20px;
   background: radial-gradient(circle,#e597cb 0%, #d380b7 8%, #ec89cb 50%, rgba(254, 232, 255, 1) 82%, rgba(255, 255, 255, 1) 100%);
 }

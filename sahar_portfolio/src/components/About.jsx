@@ -115,7 +115,7 @@ export default function AboutMe() {
 
         .ab-root {
           min-height: 100vh;
-          // 
+          font-weight: 500;
           // background: #f0ebff;
           display: flex; align-items: center; justify-content: center;
           padding: 80px 40px;

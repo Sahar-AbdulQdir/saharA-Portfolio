@@ -208,9 +208,10 @@ export default function Skills() {
           pointer-events: none;
         }
         .section-title {
-          font-family: sans-serif;
+          font-family: 'Playfair Display', serif;
+          
           font-weight: 800;
-          font-size: clamp(38px, 8vw, 66px);
+          font-size: clamp(60px, 9vw, 75px);
           color: #1a1a2e;
           letter-spacing: -0.03em;
           text-align: center;
@@ -225,7 +226,7 @@ export default function Skills() {
           background-clip: text;
         }
         // .section-sub {
-        //   font-family: 'Space Mono', monospace;
+          font-family: 'Space Mono', monospace;
         //   font-size: 12px;
         //   color: rgba(0,0,0,0.3);
         //   letter-spacing: 0.25em;

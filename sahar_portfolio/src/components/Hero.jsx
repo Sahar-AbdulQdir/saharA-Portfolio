@@ -130,7 +130,8 @@ const styles = `
   .roleVisual {
     background: #05010c; color: #ffffff;
     padding: 8px 18px; border-radius: 15px;
-    font-size: 30px; font-family: 'Cormorant Garamond', serif;
+    font-size: 30px; 
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 300; letter-spacing: 2px; text-transform: lowercase;
     align-self: flex-start; transform: translateX(-30px);
     transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
@@ -145,7 +146,8 @@ const styles = `
   .roleDesigner {
     background: #000000; color: #ffffff;
     padding: 8px 18px; border-radius: 15px;
-    font-size: 30px; font-family: 'Cormorant Garamond', serif;
+    font-size: 30px; 
+    // font-family: 'Cormorant Garamond', serif;
     font-weight: 300; letter-spacing: 2px; text-transform: lowercase;
     margin-top: -1rem; transform: translateX(30px);
     transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
@@ -163,7 +165,8 @@ const styles = `
   .titleTop {
     font-size: 110px; color: #000000;
     margin: 0; margin-left: 3rem; line-height: 0.9;
-    font-family: 'Playfair Display', serif; font-weight: 900;
+    // font-family: 'Playfair Display', serif; 
+    font-weight: 900;
     opacity: 0;
     animation: revealUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.1s forwards;
     position: relative;
@@ -186,7 +189,8 @@ const styles = `
   .titleBottom {
     font-size: 120px; color: #000000;
     margin: 0; margin-top: -14rem;
-    font-family: 'Playfair Display', serif; font-weight: 900;
+    // font-family: 'Playfair Display', serif; 
+    font-weight: 900;
     opacity: 0;
   }
   .titleBottom.im   { animation: revealUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.3s forwards; }
@@ -252,7 +256,7 @@ const styles = `
   .badge {
     position: absolute; top: -40px; right: -36px;
     background: #E393D7ff; color: #fff;
-    font-family: 'Cormorant Garamond', serif;
+    // font-family: 'Cormorant Garamond', serif;
     font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
     padding: 6px 14px; border-radius: 30px;
     opacity: 0;
@@ -287,7 +291,8 @@ const styles = `
   .portfolioText {
     color: #F568CBff; font-weight: 600; letter-spacing: 2px;
     text-decoration: underline; text-transform: uppercase;
-    font-family: 'Cormorant Garamond', serif; font-size: 14px;
+    // font-family: 'Cormorant Garamond', serif; 
+    font-size: 14px;
     transition: letter-spacing 0.4s ease, color 0.3s ease;
   }
 

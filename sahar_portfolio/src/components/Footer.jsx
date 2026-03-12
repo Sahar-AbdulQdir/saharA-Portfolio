@@ -2,6 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import b1 from "../assets/Images/b5.jpg";
 import b2 from "../assets/Images/b6.jpg";
 import emailjs from '@emailjs/browser';
+import linkedinVid from "../assets/Videos/linkedin-preview.mp4";
+import githubVid from "../assets/Videos/github-preview.mp4";
+import resumeVid from "../assets/Videos/github-preview.mp4";
 
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
@@ -414,7 +417,7 @@ const styles = `
     position: absolute;
     top: 1.5rem;
     left: 3rem;
-    font-family: 'Syne', sans-serif;
+    // font-family: 'Syne', sans-serif;
     font-size: 0.8rem;
     font-weight: 700;
     color: var(--dark-green);
@@ -429,7 +432,7 @@ const styles = `
     position: absolute;
     top: 1.5rem;
     right: 3rem;
-    font-family: 'Syne', sans-serif;
+    // font-family: 'Syne', sans-serif;
     font-size: 0.8rem;
     font-weight: 700;
     color: var(--dark-green);
@@ -570,7 +573,7 @@ const styles = `
   }
 
   .modal-title {
-    font-family: 'Syne', sans-serif;
+    // font-family: 'Syne', sans-serif;
     font-size: clamp(1.6rem, 3vw, 2.2rem);
     font-weight: 800;
     color: #f0ede6;
@@ -635,7 +638,7 @@ const styles = `
   }
 
   .form-field label {
-    font-family: 'Syne', sans-serif;
+    // font-family: 'Syne', sans-serif;
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.12em;
@@ -651,7 +654,7 @@ const styles = `
     border-radius: 12px;
     padding: 0.75rem 1rem;
     color: #000000;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    // font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 0.9rem;
     outline: none;
     transition: border-color 0.25s, background 0.25s, box-shadow 0.25s;
@@ -697,7 +700,7 @@ const styles = `
     border-radius: 9999px;
     padding: 1rem 2.4rem;
     color: #fff;
-    font-family: 'Syne', sans-serif;
+    // font-family: 'Syne', sans-serif;
     font-size: 1rem;
     font-weight: 800;
     letter-spacing: 0.04em;
@@ -752,7 +755,7 @@ const styles = `
   }
 
   .success-title {
-    font-family: 'Syne', sans-serif;
+    // font-family: 'Syne', sans-serif;
     font-size: 1.6rem;
     font-weight: 800;
     color: #f0ede6;
@@ -764,6 +767,86 @@ const styles = `
     line-height: 1.5;
     max-width: 280px;
   }
+
+  /* ── LINK PREVIEW ── */
+.footer-links li {
+  position: relative;
+}
+
+.link-preview {
+  position: absolute;
+  bottom: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px) scale(0.92);
+  width: 220px;
+  height: 140px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.45),
+    0 0 0 1px rgba(255,255,255,0.08);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.25s ease,
+    transform 0.3s cubic-bezier(0.34, 1.4, 0.64, 1);
+  z-index: 100;
+  background: #0e1520;
+}
+
+.footer-links li:hover .link-preview {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0) scale(1);
+  pointer-events: none;
+}
+
+.link-preview::before {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background: #1a1e2e;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  rotate: 45deg;
+  z-index: 2;
+}
+
+.link-preview iframe {
+  width: 900px;
+  height: 600px;
+  border: none;
+  transform: scale(0.244);
+  transform-origin: top left;
+  pointer-events: none;
+  border-radius: 0;
+}
+
+.link-preview-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.4rem 0.7rem;
+  background: linear-gradient(to top, rgba(14,21,32,0.95), transparent);
+  // font-family: 'Syne', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #78b8f8;
+  text-transform: uppercase;
+}
+
+.link-preview video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
 `;
 
 const particleColors = ['#d9e84a', '#b8d4a0', '#d63f6e', '#6ed8d8', '#7a1f2e'];
@@ -1087,12 +1170,29 @@ observer.observe(footer);
 
         <div className="footer-bottom">
           <div className="footer-brand">Sahar A.Qadir</div>
-          <ul className="footer-links">
-            <li><a href="#">Work</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Journal</a></li>
-            <li><a href="#">Instagram</a></li>
-          </ul>
+<ul className="footer-links">
+  <li>
+    <a href="https://www.linkedin.com/in/saharaqadir" target="_blank" rel="noopener noreferrer">Linked In</a>
+    <div className="link-preview">
+      <video src={linkedinVid} autoPlay muted loop playsInline />
+      <div className="link-preview-label">linkedin.com</div>
+    </div>
+  </li>
+  <li>
+    <a href="https://github.com/Sahar-AbdulQdir" target="_blank" rel="noopener noreferrer">Github</a>
+    <div className="link-preview">
+      <video src={githubVid} autoPlay muted loop playsInline />
+      <div className="link-preview-label">github.com</div>
+    </div>
+  </li>
+  <li>
+    <a href="https://drive.google.com/file/d/152zpv1XEkI6iIQBbMSizJUyYlRW7xvBC/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
+    <div className="link-preview">
+      <video src={resumeVid} autoPlay muted loop playsInline />
+      <div className="link-preview-label">resume.pdf</div>
+    </div>
+  </li>
+</ul>
           <div className="footer-copy">© 2026 — All rights reserved</div>
         </div>
 

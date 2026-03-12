@@ -11,7 +11,7 @@
   flex-wrap: wrap; /* Stacks on smaller screens */
   min-height: 100vh;
   width: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
 }
 
 /* Left column takes available space */
