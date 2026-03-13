@@ -465,12 +465,10 @@ const styles = `
 `;
 
 const MARQUEE_WORDS = [
-  "Visual Design","✦","UI/UX","✦","Brand Identity","✦",
-  "Motion","✦","Creative Direction","✦","Typography","✦",
-  "Illustration","✦","Art Direction","✦","Digital Design","✦",
-  "Visual Design","✦","UI/UX","✦","Brand Identity","✦",
-  "Motion","✦","Creative Direction","✦","Typography","✦",
-  "Illustration","✦","Art Direction","✦","Digital Design","✦",
+  "Visual Design","✦","UI/UX","✦","Web development","✦","App development","✦",
+  "Illustration","✦","Web development","✦","Digital Design","✦",
+  "Visual Design","✦","UI/UX","✦","✦","Web development","✦","App development","✦",
+  "Illustration","✦","Web development","✦","Digital Design","✦",
 ];
 
 export default function Hero() {
@@ -509,8 +507,8 @@ export default function Hero() {
           <div className="container">
 
             <div className="roleWrapper">
-              <div className="roleVisual">visual</div>
-              <div className="roleDesigner">designer</div>
+              <div className="roleVisual">Creative</div>
+              <div className="roleDesigner">Developer</div>
             </div>
 
             <div className="content">

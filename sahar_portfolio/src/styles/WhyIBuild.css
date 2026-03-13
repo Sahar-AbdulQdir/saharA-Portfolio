@@ -1,0 +1,28 @@
+.why-build {
+  padding: 120px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.why-build-container {
+  max-width: 800px;
+  text-align: center;
+}
+
+.why-build-title {
+  font-size: 36px;
+  margin-bottom: 25px;
+}
+
+.why-build-text {
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 18px;
+  color: #555;
+}
+
+.why-build-highlight {
+  margin-top: 30px;
+  font-weight: 600;
+  font-size: 18px;
+}

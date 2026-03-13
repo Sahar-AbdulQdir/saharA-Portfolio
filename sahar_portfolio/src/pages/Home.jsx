@@ -10,6 +10,7 @@ import DesignPhilosophy from "../components/desighPh";
 import AnimatedFooter from "../components/Footer";
 import Loader from "../components/loader"; // import loader
 import Featured from "../components/featured";
+import WhyIBuild from "../components/Why";
 
 function Home() {
 
@@ -43,6 +44,8 @@ function Home() {
 
         {/* Projects showcase */}
         <Projects />
+
+        <WhyIBuild />
 
         <Featured />
 

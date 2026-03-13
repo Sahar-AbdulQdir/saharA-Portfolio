@@ -12,8 +12,8 @@ const SEGMENTS = [
   { text: "front-end architecture", type: "purple" },
   { text: ", allowing me to blend aesthetics with interactivity. ", type: "normal" },
   { text: "I believe the best designs tell a story and evoke emotion.", type: "italic-glow" },
-  { text: " When I'm not coding, you can find me sketching, playing guitar, or exploring the latest in motion design. Currently based in ", type: "normal" },
-  { text: "Brooklyn", type: "highlight" },
+  { text: " Currently based in ", type: "normal" },
+  { text: "UAE", type: "highlight" },
   { text: ", I'm available for freelance projects and collaborations that push creative boundaries.", type: "normal" },
 ];
 
@@ -328,7 +328,7 @@ export default function AboutMe() {
 
           <div className={`ab-footer ${revealed >= WORDS.length ? "show" : ""}`}>
             <span className="ab-dot" />
-            <span className="ab-status">Available for freelance · Brooklyn, NY</span>
+            <span className="ab-status">Available for freelance · UAE, Shj</span>
           </div>
         </div>
       </div>

@@ -11,6 +11,7 @@
   width: 98%;
   max-width: 1650px;
   margin: auto;
+  justify-content: s;
   list-style: none;
   position: relative;
 }
@@ -18,7 +19,7 @@
 .stack-card {
   position: sticky;
   top: 100px;
-  height: 480px;
+  height: 460px;
   margin-bottom: 70px;
   border-radius: 28px;
   display: grid;
@@ -28,7 +29,6 @@
   transform-origin: center top;
   transition: transform .25s ease-out;
 }
-
 /* pastel colors */
 
 .card-1 { background:#eedafa; }

@@ -4,41 +4,41 @@ import { FaExternalLinkAlt } from "react-icons/fa"; // if using react-icons
 
 
 const apps = [
-  {
-    id: 1, type: "app", name: "Term Tracker  ", subtitle: "Task Management App", date: "Aug 2025",
-    video: "./bsuV2.mp4",
-    details: "Cross-platform mobile app for team task management with offline mode, push notifications, and AI-assisted scheduling.",
-    tech: ["React Native", "Firebase", "OpenAI"], accent: "#f97316",
-    route: "/TermTracker",  // ← add this
-  },
-  {
-    id: 2, type: "app", name: "Hope  ", subtitle: "Voice Platform App", date: "Nov 2025",
-    video: "./smV.mp4",
-    details: "Voice-enabled app with real-time transcription, speaker detection, and multilingual support for 40+ languages.",
-    tech: ["Swift", "Whisper AI", "WebRTC"], accent: "#8b5cf6",
-    route: "/Hope",  // ← add this
-  },
+{
+  id: 1, type: "app", name: "Term Tracker", subtitle: "University Module Tracker", date: "Aug 2025",
+  video: "./bsuV2.mp4",
+  details: "Android app helping Bath Spa University students explore module details, learning tools, and resources — filtered by year, major, and semester.",
+  tech: ["Kotlin", "Android", "JSON", "Picasso", "CardView"], accent: "#f97316",
+  route: "/TermTracker",
+},
+{
+  id: 2, type: "app", name: "Hope", subtitle: "SDG Donation App", date: "Nov 2025",
+  video: "./smV.mp4",
+  details: "Figma-prototyped donation app supporting the first 4 UN SDGs — connecting users to donate money, food, and medicine via online payments, pickup, or nearby donation boxes.",
+  tech: ["Figma", "UX Research", "Prototyping", "SDGs"], accent: "#8b5cf6",
+  route: "/Hope",
+},
 ];
 
 const websites = [
-  {
-    id: 3, type: "web", name: "Lexia Minds  ", subtitle: "Analytics Dashboard", date: "Jan 2025",
-    video: "./lexV.mp4",
-    details: "Real-time analytics dashboard with live data streaming, customizable widgets, and full dark mode support.",
-    tech: ["React", "D3.js", "WebSocket"], accent: "#0ea5e9",
-  },
-  {
-    id: 4, type: "web", name: "CreativePulse  ", subtitle: "E-Commerce Platform", date: "Mar 2025",
-    video: "./creatV.mp4",
-    details: "Headless e-commerce with dynamic product pages, Stripe integration, and a CMS-powered editorial layer.",
-    tech: ["Next.js", "Stripe", "Sanity"], accent: "#10b981", route: "/CreativePulse_project",
-  },
-  {
-    id: 5, type: "web", name: "Sign Language system  ", subtitle: "Design System Site", date: "Jun 2025",
-    video: "./signV.mp4",
-    details: "Documentation site for an 80+ component design system with Figma token sync and typed TypeScript APIs.",
-    tech: ["TypeScript", "Storybook", "Figma"], accent: "#ec4899", route: "/ASL_project",
-  },
+{
+  id: 3, type: "web", name: "Lexia Minds", subtitle: "Dyslexia Support Platform", date: "Jan 2025",
+  video: "./lexV.mp4",
+  details: "Full-stack web platform designed for dyslexic users, featuring text-to-speech, speech-to-text, customizable fonts and spacing, audiobooks, and podcasts in one accessible space.",
+  tech: ["React", "Node.js", "MongoDB", "Tailwind CSS", "Express"], accent: "#0ea5e9",
+},
+{
+  id: 4, type: "web", name: "CreativePulse", subtitle: "Digital Agency Platform", date: "Mar 2025",
+  video: "./creatV.mp4",
+  details: "Responsive multi-device agency website with a 3D project gallery, GSAP loader animations, scroll effects, and a Node.js/MongoDB backend for user sign-up and contact forms.",
+  tech: ["Node.js", "MongoDB", "GSAP", "SCSS", "JavaScript"], accent: "#10b981", route: "/CreativePulse_project",
+},
+{
+  id: 5, type: "web", name: "Sign Language System", subtitle: "ASL Recognition & Learning", date: "Jun 2025",
+  video: "./signV.mp4",
+  details: "Real-time ASL recognition desktop app using MediaPipe hand landmark detection and a KNN model, with Learn Mode, Live Translation, and Image Upload built in Tkinter.",
+  tech: ["Python", "MediaPipe", "KNN", "Tkinter", "NumPy"], accent: "#ec4899", route: "/ASL_project",
+},
 ];
 
 function useBreakpoint() {

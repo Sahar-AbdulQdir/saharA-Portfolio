@@ -798,6 +798,21 @@ const styles = `
   opacity: 1;
   transform: translateX(-50%) translateY(0) scale(1);
   pointer-events: none;
+
+  border-radius: 18px;
+
+  /* glass border */
+  border: 10px solid rgba(255, 255, 255, 0.25);
+
+  /* glass effect */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 8px 30px rgba(0,0,0,0.25),
+    inset 0 1px 1px rgba(255,255,255,0.4);
 }
 
 .link-preview::before {
@@ -809,8 +824,8 @@ const styles = `
   width: 12px;
   height: 12px;
   background: #1a1e2e;
-  border-right: 1px solid rgba(255,255,255,0.08);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  // border-right: 5px solid rgb(255, 17, 172);
+  // border-bottom: 5px solid hsl(307, 94%, 51%);
   rotate: 45deg;
   z-index: 2;
 }
@@ -1193,7 +1208,7 @@ observer.observe(footer);
     </div>
   </li>
 </ul>
-          <div className="footer-copy">© 2026 — All rights reserved</div>
+          <div className="footer-copy">2026</div>
         </div>
 
       </footer>

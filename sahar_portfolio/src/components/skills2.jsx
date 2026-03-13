@@ -1,24 +1,25 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 
 const skills = [
-  { name: "React",      color: "#60A5FA", emoji: "⚛️" },  // soft blue
-  { name: "TypeScript", color: "#818CF8", emoji: "🔷" },  // indigo
-  { name: "Node.js",    color: "#5EEAD4", emoji: "🟩" },  // tiffany mint
-  { name: "CSS",        color: "#38BDF8", emoji: "🎨" },  // sky blue
-  { name: "Python",     color: "#A78BFA", emoji: "🐍" },  // soft purple
-  { name: "GraphQL",    color: "#F0ABFC", emoji: "◈"  },  // light pink
-  { name: "Docker",     color: "#22D3EE", emoji: "🐳" },  // cyan
-  { name: "Git",        color: "#C084FC", emoji: "🌿" },  // lavender
-  { name: "Figma",      color: "#F9A8D4", emoji: "🖌️" },  // pastel pink
-  { name: "AWS",        color: "#67E8F9", emoji: "☁️" },  // icy blue
-  { name: "PostgreSQL", color: "#93C5FD", emoji: "🐘" },  // light blue
-  { name: "Redux",      color: "#A78BFA", emoji: "🔮" },  // violet
-  { name: "Rust",       color: "#C4B5FD", emoji: "⚙️" },  // pale purple
-  { name: "Swift",      color: "#F5D0FE", emoji: "🦅" },  // soft lilac pink
-  { name: "Tailwind",   color: "#5EEAD4", emoji: "💨" },  // mint
-  { name: "Firebase",   color: "#7DD3FC", emoji: "🔥" },  // light cyan
-  { name: "Next.js",    color: "#A5B4FC", emoji: "▲"  },  // cool indigo
-  { name: "MongoDB",    color: "#99F6E4", emoji: "🍃" },  // pale tiffany
+  { name: "JavaScript", color: "#FDE68A", emoji: "🟨" },
+  { name: "React", color: "#60A5FA", emoji: "⚛️" },
+  { name: "React Router", color: "#93C5FD", emoji: "🧭" },
+  { name: "Next.js", color: "#A5B4FC", emoji: "▲" },
+
+  { name: "HTML5", color: "#FDBA74", emoji: "📄" },
+  { name: "CSS", color: "#38BDF8", emoji: "🎨" },
+  { name: "Tailwind", color: "#5EEAD4", emoji: "💨" },
+  { name: "Responsive Design", color: "#7DD3FC", emoji: "📱" },
+
+  { name: "Node.js", color: "#86EFAC", emoji: "🟢" },
+  { name: "MongoDB", color: "#99F6E4", emoji: "🍃" },
+  { name: "Python", color: "#A78BFA", emoji: "🐍" },
+  { name: "API Integration", color: "#C4B5FD", emoji: "🔗" },
+
+  { name: "Git", color: "#C084FC", emoji: "🌿" },
+  { name: "Figma", color: "#F9A8D4", emoji: "🖌️" },
+  { name: "UI/UX Design", color: "#FBCFE8", emoji: "✨" },
+  { name: "Debugging", color: "#DDD6FE", emoji: "🧩" }
 ];
 
 

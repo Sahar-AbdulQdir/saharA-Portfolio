@@ -1,13 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 
 const PROJECTS = [
-//   { id: 1, title: "Typographic System", tag: "Design", year: "2024", iframe: "https://example.com", link: "https://example.com" },
-  { id: 2, title: "Commerce Platform", tag: "Development", year: "2024", iframe: "https://www.dcstuds.com/post/best-of-web-dev-2-with-ms-rafia-fall2024#viewer-vegnq1316", link: "https://www.dcstuds.com/post/best-of-web-dev-2-with-ms-rafia-fall2024#viewer-vegnq1316" },
-  { id: 3, title: "Brand Identity", tag: "Branding", year: "2023", iframe: "https://www.dcstuds.com/post/best-of-emerging-technologies-with-ms-rafia-spring2025#viewer-8bgcc1946", link: "https://www.dcstuds.com/post/best-of-emerging-technologies-with-ms-rafia-spring2025#viewer-8bgcc1946" },
-  { id: 4, title: "Motion Reel", tag: "Animation", year: "2023", iframe: "https://www.dcstuds.com/post/best-of-code-lab-2-with-ms-arshiya-fall2024#viewer-2f5ke1056", link: "https://www.dcstuds.com/post/best-of-code-lab-2-with-ms-arshiya-fall2024#viewer-2f5ke1056" },
-  { id: 5, title: "Dashboard UI", tag: "UI/UX", year: "2023", iframe: "https://www.dcstuds.com/post/best-of-game-design-with-ms-mary-fall2024#viewer-j64ws6520", link: "https://www.dcstuds.com/post/best-of-game-design-with-ms-mary-fall2024#viewer-j64ws6520" },
-  { id: 6, title: "Web Application", tag: "Web App", year: "2022", iframe: "https://www.dcstuds.com/post/best-of-creative-coding-spring2024#viewer-0xcrx9976", link: "https://www.dcstuds.com/post/best-of-creative-coding-spring2024#viewer-0xcrx9976" },
-  { id: 7, title: "Design System", tag: "Systems", year: "2022", iframe: "https://www.dcstuds.com/post/fairycup-chandeliers-ideation-creative-problem-solving-spring24", link: "https://www.dcstuds.com/post/fairycup-chandeliers-ideation-creative-problem-solving-spring24" },
+  { id: 2, title: "CreativePulse – Digital Agency", tag: "Development", year: "2025", iframe: "https://www.dcstuds.com/post/best-of-web-dev-2-with-ms-rafia-fall2024#viewer-vegnq1316", link: "https://www.dcstuds.com/post/best-of-web-dev-2-with-ms-rafia-fall2024#viewer-vegnq1316" },
+  { id: 3, title: "Petrol Chatbot & Space Data Visualisation", tag: "Data Visualisation", year: "2025", iframe: "https://www.dcstuds.com/post/best-of-emerging-technologies-with-ms-rafia-spring2025#viewer-8bgcc1946", link: "https://www.dcstuds.com/post/best-of-emerging-technologies-with-ms-rafia-spring2025#viewer-8bgcc1946" },
+  { id: 4, title: "Cinema App", tag: "Development", year: "2024", iframe: "https://www.dcstuds.com/post/best-of-code-lab-2-with-ms-arshiya-fall2024#viewer-2f5ke1056", link: "https://www.dcstuds.com/post/best-of-code-lab-2-with-ms-arshiya-fall2024#viewer-2f5ke1056" },
+  { id: 5, title: "2D Game", tag: "Game Design", year: "2024", iframe: "https://www.dcstuds.com/post/best-of-game-design-with-ms-mary-fall2024#viewer-j64ws6520", link: "https://www.dcstuds.com/post/best-of-game-design-with-ms-mary-fall2024#viewer-j64ws6520" },
+  { id: 6, title: "Creative Coding & Interactive Art", tag: "Creative Coding", year: "2024", iframe: "https://www.dcstuds.com/post/best-of-creative-coding-spring2024#viewer-0xcrx9976", link: "https://www.dcstuds.com/post/best-of-creative-coding-spring2024#viewer-0xcrx9976" },
+  { id: 7, title: "FairyCup Chandeliers", tag: "Ideation & Design", year: "2024", iframe: "https://www.dcstuds.com/post/fairycup-chandeliers-ideation-creative-problem-solving-spring24", link: "https://www.dcstuds.com/post/fairycup-chandeliers-ideation-creative-problem-solving-spring24" },
 ];
 
 const ACCENTS = ["#B8E7F3", "#F568CB", "#6E9FEA", "#E393D7", "#59E7E7", "#B8E7F3", "#F568CB"];
@@ -23,7 +22,7 @@ export default function App() {
   }, []);
 
   return (
-    <div style={{ background: "#fff", minHeight: "100vh", fontFamily: "'DM Mono', monospace", padding: "40px 0 56px" }}>
+    <div style={{ background: "#fff", minHeight: "100vh", fontFamily: "'DM Mono', monospace", padding: "40px 0 56px", marginTop: "50px" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -88,7 +87,7 @@ export default function App() {
         </div>
         <h2 className="main-title">Awarded <em>Best</em> of Works</h2>
         <p className="subtitle">
-          Projects selected by faculty &amp; jury as <strong>top submissions</strong> across graduating cohorts — recognized for craft, concept &amp; execution.
+          Projects selected by faculty members as the <strong>top submissions</strong> across the  cohort — recognized for craft, concept &amp; execution.
         </p>
       </div>
 
