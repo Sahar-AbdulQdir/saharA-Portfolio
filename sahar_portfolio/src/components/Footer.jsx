@@ -4,7 +4,7 @@ import b2 from "../assets/Images/b6.jpg";
 import emailjs from '@emailjs/browser';
 import linkedinVid from "../assets/Videos/linkedin-preview.mp4";
 import githubVid from "../assets/Videos/github-preview.mp4";
-import resumeVid from "../assets/Videos/github-preview.mp4";
+import resumeVid from "../assets/Videos/resume-preview.mp4";
 
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
@@ -1201,7 +1201,7 @@ observer.observe(footer);
     </div>
   </li>
   <li>
-    <a href="https://drive.google.com/file/d/152zpv1XEkI6iIQBbMSizJUyYlRW7xvBC/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
+    <a href="https://docs.google.com/document/d/1VQs3KxX3XKj4RmVtbWsyttarVRxgVGT4X15NGPAiyRI/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
     <div className="link-preview">
       <video src={resumeVid} autoPlay muted loop playsInline />
       <div className="link-preview-label">resume.pdf</div>
