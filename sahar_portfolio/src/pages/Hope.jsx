@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import {
-  FiSmartphone, FiUsers, FiHeart, FiMapPin, FiBell, FiBook,
+  FiUsers, FiHeart, FiMapPin, FiBell, FiBook,
   FiShare2, FiEye, FiCreditCard, FiBarChart2, FiCheckCircle, FiMessageCircle
 } from "react-icons/fi";
 
@@ -19,12 +19,6 @@ import smHigh10 from "../assets/Images/smHigh10.png";
 import smHigh11 from "../assets/Images/smHigh11.png";
 import smHigh12 from "../assets/Images/smHigh12.png";
 import smHigh13 from "../assets/Images/smHigh13.png";
-import smUI1    from "../assets/Images/smUI1.png";
-import smUI2    from "../assets/Images/smUI2.png";
-import smUI3    from "../assets/Images/smUI3.png";
-import smUI4    from "../assets/Images/smUI4.png";
-import smUI5    from "../assets/Images/smUI5.png";
-import smUI6    from "../assets/Images/smUI6.png";
 import appSketche1 from "../assets/Images/smSketch1.jpeg"
 import appSketche2 from "../assets/Images/smSketch2.jpeg"
 import appSketche3 from "../assets/Images/smSketch3.jpeg"
@@ -32,8 +26,6 @@ import appSketche4 from "../assets/Images/smSketch4.jpeg"
 import appSketche5 from "../assets/Images/smSketch5.jpeg"
 
 const hifiScreens = [smHigh1,smHigh2,smHigh3,smHigh4,smHigh5,smHigh6,smHigh7,smHigh8,smHigh9,smHigh10,smHigh11,smHigh12,smHigh13];
-const uiScreens   = [smUI1,smUI2,smUI3,smUI4,smUI5,smUI6];
-
 /* ─── PALETTE ──────────────────────────────────────────────────────────────── */
 const styles = `
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
@@ -521,28 +513,6 @@ function useDragScroll() {
   return ref;
 }
 
-/* ── PHONE SCREEN PLACEHOLDER ── */
-function PhoneScreen() {
-  return (
-    <div className="hope-phone__screen-placeholder">
-      <div style={{width:'100%',height:'100%',background:'var(--grad)',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',gap:6}}>
-        <span style={{fontSize:'1.8rem',fontWeight:900,color:'white',letterSpacing:'-.04em'}}>HOPE</span>
-        <small style={{fontSize:'.6rem',color:'rgba(255,255,255,.65)',fontWeight:600,letterSpacing:'.1em',textTransform:'uppercase'}}>Donate · Impact · Change</small>
-      </div>
-    </div>
-  );
-}
-
-/* ── WF IMAGE PLACEHOLDER ── */
-function WFPlaceholder({ label }) {
-  return (
-    <div className="hope-wf-placeholder">
-      <FiSmartphone size={32} style={{opacity:.3,color:'var(--accent)'}}/>
-      <span>{label}</span>
-    </div>
-  );
-}
-
 /* ── USE REVEAL ── */
 function useReveal() {
   useEffect(() => {
@@ -580,18 +550,6 @@ const sdgCards = [
   { n: '04', title: 'Quality Education', desc: 'Fund educational materials and learning opportunities for all.', bg: 'linear-gradient(135deg,#C5192D,#a0141e)' },
 ];
 
-/* Helper component metadata — mark wide ones that are landscape-ish */
-const helperComponents = [
-  { label: 'Keyboard',      wide: true },
-  { label: 'Side Menu',     wide: false },
-  { label: 'Checkout Menu', wide: true },
-  { label: 'Modal',         wide: false },
-  { label: 'Dropdown',      wide: false },
-  { label: 'Toast',         wide: false },
-  { label: 'Drawer',        wide: false },
-  { label: 'Alert',         wide: false },
-  { label: 'Tab Bar',       wide: true },
-];
 
 /* ─── MAIN COMPONENT ─────────────────────────────────────────────────── */
 export default function HopeApp() {
@@ -648,7 +606,7 @@ export default function HopeApp() {
         <div className="hope-prog" style={{ width: `${scrollPct}%` }}/>
 
         {/* back */}
-        <a href="#" className="hope-back" onClick={e => { e.preventDefault(); window.history.back(); }}>
+        <a href="/Home" className="hope-back" onClick={e => { e.preventDefault(); window.history.back(); }}>
           <IconBack/> Back
         </a>
 
@@ -861,9 +819,7 @@ export default function HopeApp() {
                <img src={appSketche5} alt="App sketches and wireframes"
                 onError={e => { e.target.style.display='none'; e.target.nextSibling.style.display='flex'; }}
               />
-               
-              {/* <WFPlaceholder label="App Sketches / Low-Fi Wireframes"/> */}
-            </div>
+                           </div>
           </div>
 
           {/* High-fi mockups overview */}
@@ -876,7 +832,6 @@ export default function HopeApp() {
               <img src={highFidelityMockup} alt="High fidelity mockups overview"
                 onError={e => { e.target.style.display='none'; e.target.nextSibling.style.display='flex'; }}
               />
-              {/* <WFPlaceholder label="High-Fidelity Overview"/> */}
             </div>
           </div>
         </section>
@@ -903,33 +858,6 @@ export default function HopeApp() {
               </div>
             </div>
           </div>
-
-          {/* ── HELPER COMPONENTS — responsive grid, no scroll ── */}
-          {/* <div className="hope-hifi-subsection"> */}
-            {/* <div className="hope-hifi-header h-reveal" style={{ marginBottom: 0 }}>
-              <div className="hope-hifi-label" style={{ marginTop: 20 }}>UI Components & Helpers</div>
-              <h3 style={{ fontSize: 'clamp(1.3rem,2.5vw,1.8rem)', fontWeight: 800, letterSpacing: '-.04em', color: 'var(--ink)' }}>
-                Keyboard · Side Menu · <span style={{ background: 'var(--grad)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Checkout & More</span>
-              </h3>
-              <p style={{ marginTop: 10, fontSize: '.88rem', color: 'var(--ink-muted)', fontWeight: 400 }}>
-                9 component overlays
-              </p>
-            </div> */}
-
-            {/* Responsive masonry-style grid */}
-            {/* <div style={{ padding: '0 80px' }}>
-              <div className="hope-helpers-grid h-stagger">
-                {helperComponents.map(({ label, wide }, i) => (
-                  <div key={i} className={`hope-helper-item${wide ? ' wide' : ''}`}>
-                    <div className="hope-helper-card">
-                      <img src={uiScreens[i]} alt={label} />
-                    </div>
-                    <span className="hope-helper-label">{label}</span>
-                  </div>
-                ))}
-              </div>
-            </div> */}
-          {/* </div> */}
         </section>
 
         {/* PROTOTYPE VIDEO */}

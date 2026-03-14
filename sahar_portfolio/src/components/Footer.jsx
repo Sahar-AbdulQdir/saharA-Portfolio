@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import b1 from "../assets/Images/b5.jpg";
-import b2 from "../assets/Images/b6.jpg";
 import emailjs from '@emailjs/browser';
 import linkedinVid from "../assets/Videos/linkedin-preview.mp4";
 import githubVid from "../assets/Videos/github-preview.mp4";

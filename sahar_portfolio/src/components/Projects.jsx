@@ -302,7 +302,6 @@ function WebCardSmall({ project }) {
 
 /* ── Main ─────────────────────────────────────────────────────────────── */
 export default function ProjectCards() {
-  const navigate = useNavigate();
   const { isMobile, isTablet, isDesktop } = useBreakpoint();
 
   // Layout modes:

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 // Replace these with your actual image imports:
 import LowFi from "../assets/Images/CpLow.png";
 import HiFi from "../assets/Images/CpHigh.png";
@@ -385,7 +385,7 @@ export default function CreativePulse() {
         <div className="cp-prog" style={{ width: `${scrollPct}%` }} />
 
         {/* Back Button */}
-        <a href="#" className="cp-back-btn" onClick={e => { e.preventDefault(); window.history.back(); }}>
+        <a href="/Home" className="cp-back-btn" onClick={e => { e.preventDefault(); window.history.back(); }}>
           <IconBack /> Back
         </a>
 

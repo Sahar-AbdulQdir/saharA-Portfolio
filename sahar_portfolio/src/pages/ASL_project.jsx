@@ -435,14 +435,10 @@ function Img({ src, alt, icon, label }) {
   );
 }
 
-// ── ASL hand display letters ──────────────────────────────────────────────
-const ASL_LETTERS = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y'];
-
 export default function SignLanguagePage() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   const [scrollPct, setScrollPct] = useState(0);
   const [scrolled, setScrolled] = useState(false);
-  const [activeLetters, setActiveLetters] = useState(new Set([0, 5, 11, 17, 23]));
   useReveal();
 
   useEffect(() => {
@@ -455,15 +451,6 @@ export default function SignLanguagePage() {
     return () => window.removeEventListener('scroll', h);
   }, []);
 
-  // animate active cells
-  useEffect(() => {
-    const id = setInterval(() => {
-      const pick = new Set();
-      while (pick.size < 5) pick.add(Math.floor(Math.random() * 25));
-      setActiveLetters(pick);
-    }, 1800);
-    return () => clearInterval(id);
-  }, []);
 
   // bar animation
   const [barsVis, setBarsVis] = useState(false);
@@ -507,7 +494,7 @@ export default function SignLanguagePage() {
         <div className="sl-prog" style={{ width: `${scrollPct}%` }} />
 
         {/* Back */}
-        <a href="#" className="sl-back" onClick={e => { e.preventDefault(); window.history.back(); }}>
+        <a href="/Home" className="sl-back" onClick={e => { e.preventDefault(); window.history.back(); }}>
           <IconBack /> Back
         </a>
 

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import HighF from "../assets/Images/lexHigh.png";
 import LowF from "../assets/Images/lexLow.png";
 import Layout from "../assets/Images/lexLay.png";
@@ -633,60 +633,6 @@ const IconBack = () => (
     <polyline points="15 18 9 12 15 6"/>
   </svg>
 );
-const LogoIcon = ({ size = 18, color = "white" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
-    <circle cx="12" cy="8" r="4" fill={color} opacity=".9"/>
-    <path d="M6 20c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke={color} strokeWidth="2" strokeLinecap="round" opacity=".7"/>
-  </svg>
-);
-const LogoIconLg = () => (
-<img src={LogoFavicon} alt="Lexia Minds Logo" width="28" height="28" />
-);
-// const LogoIconSm = () => (
-//   <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
-//     <circle cx="16" cy="11" r="6" fill="white" opacity=".95"/>
-//     <path d="M7 28c0-4.971 4.029-9 9-9s9 4.029 9 9" stroke="white" strokeWidth="2.5" strokeLinecap="round" opacity=".8"/>
-//   </svg>
-// );
-// const LogoIconSmInv = () => (
-//   <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
-//     <defs><linearGradient id="gInv" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse"><stop stopColor="#7c3aed"/><stop offset="1" stopColor="#2563eb"/></linearGradient></defs>
-//     <circle cx="16" cy="11" r="6" fill="url(#gInv)" opacity=".95"/>
-//     <path d="M7 28c0-4.971 4.029-9 9-9s9 4.029 9 9" stroke="url(#gInv)" strokeWidth="2.5" strokeLinecap="round" opacity=".8"/>
-//   </svg>
-// );
-
-// Drag scroll hook
-function useDragScroll() {
-  const ref = useRef(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    let down = false, sx, sl;
-    const onDown = e => { down = true; el.classList.add('grabbing'); sx = e.pageX - el.offsetLeft; sl = el.scrollLeft; };
-    const onLeave = () => { down = false; el.classList.remove('grabbing'); };
-    const onUp = () => { down = false; el.classList.remove('grabbing'); };
-    const onMove = e => { if (!down) return; e.preventDefault(); el.scrollLeft = sl - (e.pageX - el.offsetLeft - sx) * 1.5; };
-    let tsx, tsl;
-    const onTStart = e => { tsx = e.touches[0].pageX - el.offsetLeft; tsl = el.scrollLeft; };
-    const onTMove = e => { el.scrollLeft = tsl - (e.touches[0].pageX - el.offsetLeft - tsx); };
-    el.addEventListener('mousedown', onDown);
-    el.addEventListener('mouseleave', onLeave);
-    el.addEventListener('mouseup', onUp);
-    el.addEventListener('mousemove', onMove);
-    el.addEventListener('touchstart', onTStart, { passive: true });
-    el.addEventListener('touchmove', onTMove, { passive: true });
-    return () => {
-      el.removeEventListener('mousedown', onDown);
-      el.removeEventListener('mouseleave', onLeave);
-      el.removeEventListener('mouseup', onUp);
-      el.removeEventListener('mousemove', onMove);
-      el.removeEventListener('touchstart', onTStart);
-      el.removeEventListener('touchmove', onTMove);
-    };
-  }, []);
-  return ref;
-}
 
 // Intersection observer hook
 function useReveal() {
@@ -706,8 +652,6 @@ export default function LexiaMinds() {
 }, []);
   const [scrollPct, setScrollPct] = useState(0);
   const [scrolled, setScrolled] = useState(false);
-  const wfTrackRef = useDragScroll();
-  const galTrackRef = useDragScroll();
 
   useReveal();
 
@@ -755,14 +699,14 @@ export default function LexiaMinds() {
         <div className="lm-prog" style={{ width: `${scrollPct}%` }} />
 
         {/* Back Button */}
-        <a href="#" className="lm-back-btn" onClick={e => { e.preventDefault(); window.history.back(); }}>
+        <a href="/Home" className="lm-back-btn" onClick={e => { e.preventDefault(); window.history.back(); }}>
           <IconBack /> Back
         </a>
 
         {/* Nav */}
         <nav className={`lm-nav${scrolled ? ' scrolled' : ''}`}>
           {/* <a href="#" className="lm-nav-logo"> */}
-            {/* <div className="lm-nav-logo-icon"><LogoIcon /></div> */}
+  
             {/* <span className="lm-nav-logo-text">Lexia Minds</span> */}
           {/* </a> */}
           <ul className="lm-nav-links">
@@ -884,8 +828,6 @@ export default function LexiaMinds() {
   </div>
 </div>
                 <div className="lm-logo-icon-only">
-                  {/* <div className="lm-logo-sm"><LogoIconSm /></div> */}
-                  {/* <div className="lm-logo-sm-inv"><LogoIconSmInv /></div> */}
                   <div style={{ color: '#000000', display: 'flex', alignItems: 'center', padding: '6px 16px', borderRadius: '10px'}}>
                     <span style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: '.85rem', fontWeight: 500, color: '#000000', letterSpacing: '-.02em' }}>
                      <em style={{ fontStyle:'normal', WebkitBackgroundClip: 'text', WebkitTextFillColor: '#000000', backgroundClip: 'text', color : '#000000' }}>

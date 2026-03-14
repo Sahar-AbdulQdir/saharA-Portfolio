@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 const PROJECTS = [
   { id: 2, title: "CreativePulse – Digital Agency", tag: "Development", year: "2025", iframe: "https://www.dcstuds.com/post/best-of-web-dev-2-with-ms-rafia-fall2024#viewer-vegnq1316", link: "https://www.dcstuds.com/post/best-of-web-dev-2-with-ms-rafia-fall2024#viewer-vegnq1316" },

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import {
-  FiSmartphone, FiUsers, FiBook, FiCode, FiDatabase,
-  FiCheckCircle, FiLayers, FiGrid, FiFileText, FiLink,
+  FiUsers, FiBook, FiCode, FiDatabase,
+  FiCheckCircle, FiFileText, FiLink,
   FiDownload, FiVolume2, FiFilter, FiLayout
 } from "react-icons/fi";
 
@@ -601,7 +601,7 @@ export default function TermTracker() {
         <div className="nt-prog" style={{ width: `${scrollPct}%` }}/>
 
         {/* back */}
-        <a href="#" className="nt-back" onClick={e => { e.preventDefault(); window.history.back(); }}>
+        <a href="/Home" className="nt-back" onClick={e => { e.preventDefault(); window.history.back(); }}>
           <IconBack/> Back
         </a>
 

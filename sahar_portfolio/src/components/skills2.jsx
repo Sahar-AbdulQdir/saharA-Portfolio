@@ -48,7 +48,6 @@ function SkillButton({ skill, rand, progress }) {
 
   let translateY, translateX, rotate, opacity;
 
-  const FALL_END = 0.58;
   const FLY_START = 0.62;
 
   if (progress < FLY_START) {
