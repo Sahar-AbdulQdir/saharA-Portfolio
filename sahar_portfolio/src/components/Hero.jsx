@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Pimg from "../assets/Images/PImg.PNG"
 
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400&family=Cormorant+Garamond:wght@300;600&display=swap');
@@ -521,7 +522,7 @@ export default function Hero() {
                   <div className="badge">Available ✦</div>
                   <div className="imageWrapper">
                     <img
-                      src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&h=500&fit=crop&crop=face"
+                      src={Pimg}
                       alt="Profile"
                       className="image"
                     />
